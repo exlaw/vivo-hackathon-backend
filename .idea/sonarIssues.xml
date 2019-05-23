@@ -13,12 +13,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/sonar-project.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/test_1.py">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/test_2.py">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="&lt;8e2e5d32-c300-41a5-9859-b3ffe728334e&gt;/root/.bashrc">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="&lt;8e2e5d32-c300-41a5-9859-b3ffe728334e&gt;/root/sonar-scanner-3.3.0.1492-linux/conf/sonar-scanner.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="&lt;8e2e5d32-c300-41a5-9859-b3ffe728334e&gt;/web/sonarqube-6.7.7/bin/linux-x86-64/sonar.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="&lt;8e2e5d32-c300-41a5-9859-b3ffe728334e&gt;/web/sonarqube-6.7.7/conf/sonar.properties">
           <value>
             <set />
           </value>
