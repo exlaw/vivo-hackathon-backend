@@ -40,4 +40,4 @@ class MyTest(unittest.TestCase):  # 继承unittest.TestCase
 
 
 if __name__ == '__main__':
-    unittest.main()  # 运行所有的测试用例
+    unittest.main()
