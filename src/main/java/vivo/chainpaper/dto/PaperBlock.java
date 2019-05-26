@@ -6,13 +6,19 @@ public class PaperBlock {
     String introduction;
     String content;
     String conclusion;
+    String title;
+    String keywords;
+    String acknowledgement;
 
-    public PaperBlock(String uid, String abstractContent, String introduction, String content, String conclusion) {
+    public PaperBlock(String uid, String abstractContent, String introduction, String content, String conclusion,String title,String keywords,String acknowledgement) {
         this.uid = uid;
         this.abstractContent = abstractContent;
         this.introduction = introduction;
         this.content = content;
         this.conclusion = conclusion;
+        this.title=title;
+        this.keywords=keywords;
+        this.acknowledgement=acknowledgement;
     }
 
     public String getUid() {

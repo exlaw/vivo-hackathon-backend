@@ -6,6 +6,9 @@ public class PaperDraft {
     String introduction;
     String content;
     String conclusion;
+    String title;
+    String keywords;
+    String acknowledgement;
 
     public PaperDraft(Reference[] reference, String abstractContent, String introduction, String content, String conclusion) {
         this.reference = reference;
@@ -53,5 +56,29 @@ public class PaperDraft {
 
     public void setConclusion(String conclusion) {
         this.conclusion = conclusion;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
+    }
+
+    public String getAcknowledgement() {
+        return acknowledgement;
+    }
+
+    public void setAcknowledgement(String acknowledgement) {
+        this.acknowledgement = acknowledgement;
     }
 }

@@ -34,6 +34,17 @@ public class Paper {
     @Column(name="cooperator")
     ArrayList<String> cooperator=new ArrayList<>();
 
+    @Column(name="title")
+    String title="";
+
+    @Column(name="keywords")
+    String keywords="";
+
+    @Column(name="acknowledgement")
+    String acknowledgement="";
+
+
+
     @Column (name="index")
     long index=0;
     @Column (name="offset")
@@ -41,7 +52,7 @@ public class Paper {
     @Column (name="time")
     String time="";
 
-    public Paper(String abstractContent, String introduction, String content, String conclusion, Reference[] refs, String writer) {
+    public Paper(String abstractContent, String introduction, String content, String conclusion, Reference[] refs, String writer,String title,String keywords,String acknowledgement) {
         this.abstractContent = abstractContent;
         this.introduction = introduction;
         this.content = content;
@@ -49,6 +60,9 @@ public class Paper {
         this.writer = writer;
         this.time= TimeUtil.getTimeStamp();
         this.id=time+(int)(Math.random()*100000);
+        this.title=title;
+        this.keywords=keywords;
+        this.acknowledgement=acknowledgement;
         for(Reference ref:refs){
             this.reference_type.add(ref.getType());
             if(ref.getType()=="published"){

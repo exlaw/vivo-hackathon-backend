@@ -32,7 +32,7 @@ public class PaperController {
     public @ResponseBody PaperUploadResponse
     uploadPaper(@RequestBody PaperUploadParams params, HttpServletResponse response){
         PaperDraft pd=params.getPaperDraft();
-        Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername());
+        Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement());
         Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
         paper.setIndex(block.getBlockIndex());
         paper.setOffset(block.getBlockOffset());
