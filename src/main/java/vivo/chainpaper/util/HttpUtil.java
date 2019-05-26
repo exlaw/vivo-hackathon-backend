@@ -62,29 +62,29 @@ public class HttpUtil {
         }
     }
 
-    public static String getData(String urlStr){
-        try {
-            CloseableHttpClient client = null;
-            CloseableHttpResponse response = null;
-            try {
-                HttpGet httpGet = new HttpGet(urlStr);
-
-                client = HttpClients.createDefault();
-                response = client.execute(httpGet);
-                HttpEntity entity = response.getEntity();
-                String result = EntityUtils.toString(entity);
-                return result;
-            } finally {
-                if (response != null) {
-                    response.close();
-                }
-                if (client != null) {
-                    client.close();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    public static String getData(String urlStr){
+//        try {
+//            CloseableHttpClient client = null;
+//            CloseableHttpResponse response = null;
+//            try {
+//                HttpGet httpGet = new HttpGet(urlStr);
+//
+//                client = HttpClients.createDefault();
+//                response = client.execute(httpGet);
+//                HttpEntity entity = response.getEntity();
+//                String result = EntityUtils.toString(entity);
+//                return result;
+//            } finally {
+//                if (response != null) {
+//                    response.close();
+//                }
+//                if (client != null) {
+//                    client.close();
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 }

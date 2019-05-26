@@ -81,7 +81,7 @@ public class PaperController {
 //        paper.setIndexs(block.getBlockIndex());
 //        paper.setOffsets(block.getBlockOffset());
         paper.setId(paperId);
-        setRefs(paper,pd);
+        paper=setRefs(paper,pd);
         paperDao.save(paper);
         return new PaperUploadResponse(paperId);
     }
@@ -91,15 +91,15 @@ public class PaperController {
     //点赞
     @RequestMapping(value = "/{paperId}/star", method = RequestMethod.POST)
     public void
-    uploadStar(@PathVariable("paperId") long paperId){
-        String id = UserInfoUtil.getUsername()+Long.toString(paperId);
+    uploadStar(@PathVariable("paperId") String paperId){
+        String id = UserInfoUtil.getUsername()+paperId;
        boolean isExited=starDao.existsById(id);
         Star star;
        if(isExited){
            star=starDao.findById(id).get();
            star.setStar(star.getStar() == 0?1:0);
        }else{
-            star=new Star(UserInfoUtil.getUsername(),Long.toString(paperId));
+            star=new Star(UserInfoUtil.getUsername(),paperId);
             star.setStar(1);
        }
 
@@ -171,15 +171,15 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public void
-    uploadStar(@PathVariable("paperId") long paperId, @RequestBody ScoreParameter params){
+    uploadStar(@PathVariable("paperId") String paperId, @RequestBody ScoreParameter params){
 
-        String id=UserInfoUtil.getUsername() + Long.toString(paperId);
+        String id=UserInfoUtil.getUsername() + paperId;
         boolean isExited=starDao.existsById(id);
         Star star;
         if(isExited){
             star=starDao.findById(id).get();
         }else{
-            star=new Star(id,Long.toString(paperId));
+            star=new Star(id,paperId);
         }
         star.setScore(params.getScore());
         starDao.save(star);
@@ -190,8 +190,8 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public void
-    uploadComment(@PathVariable("paperId") long paperId, @RequestBody CommentParameter params){
-        Comment comment=new Comment(UserInfoUtil.getUsername(),Long.toString(paperId),params.getComment());
+    uploadComment(@PathVariable("paperId") String paperId, @RequestBody CommentParameter params){
+        Comment comment=new Comment(UserInfoUtil.getUsername(),paperId,params.getComment());
         commentDao.save(comment);
     }
 
@@ -199,7 +199,7 @@ public class PaperController {
             method = RequestMethod.GET,
             produces = {"application/json", "application/xml"})
     public @ResponseBody ResponseEntity<Response>
-     getPaperInfo(@PathVariable("paperId") long paperId){
+     getPaperInfo(@PathVariable("paperId") String paperId){
         PaperInfo paperInfo=getPaperInfoFromId(paperId);
         return new ResponseEntity<>(new SinglePaperGetResponse(paperInfo), HttpStatus.OK);
     }
@@ -212,16 +212,16 @@ public class PaperController {
         ArrayList<Paper> papers=(ArrayList<Paper>)paperDao.findAll();
         PaperInfo[] paperInfos=new PaperInfo[papers.size()];
         for(int i=0;i<paperInfos.length;i++){
-            paperInfos[i]=getPaperInfoFromId(Long.parseLong(papers.get(i).getId()));
+            paperInfos[i]=getPaperInfoFromId(papers.get(i).getId());
         }
         return new ListPaperGetResponse(paperInfos);
     }
 
 
-    private PaperInfo getPaperInfoFromId(long paperId){
+    private PaperInfo getPaperInfoFromId(String paperId){
         Paper paper;
-        if(paperDao.findById(Long.toString(paperId)).isPresent()) {
-            paper = paperDao.findById(Long.toString(paperId)).get();
+        if(paperDao.findById(paperId).isPresent()) {
+            paper = paperDao.findById(paperId).get();
         }else{
             return null;
         }
@@ -230,22 +230,31 @@ public class PaperController {
         names.toArray(authors);
         PaperInfo paperInfo=new PaperInfo();
         paperInfo.setAuthors(authors);
-        paperInfo.setPaperId(Long.toString(paperId));
+        paperInfo.setPaperId(paperId);
         paperInfo.setUploadTime(paper.getC_time());
         paperInfo.setState(paper.getPaper_state());
         Reference[] references=new Reference[paper.getRefs().size()];
         for(int i=0;i<paper.getRefs().size();i++){
             Reference ref;
+            String[] infos=paper.getRefs().get(i).split("###");
+            String info1="";
+            String info2="";
+            if(infos.length==2){
+                info2=infos[1];
+                info1=infos[0];
+            }else if(infos.length==1){
+                info1=infos[0];
+            }
             if(paper.getReference_type().get(i).equals("published")) {
-                ref = new Reference("published",paper.getRefs().get(i).split("###")[0],null,paper.getRefs().get(i).split("###")[1]);
+                ref = new Reference("published",info1,null,info2);
             }else{
-                 ref = new Reference("chainpaper",null,paper.getRefs().get(i).split("###")[0],paper.getRefs().get(i).split("###")[1]);
+                 ref = new Reference("chainpaper",null,info1,info2);
             }
             references[i]=ref;
         }
         PaperDraft pd=new PaperDraft(references,paper.getAbstractContent(),paper.getIntroduction(),paper.getContent(),paper.getConclusion(),paper.getTitle(),paper.getKeywords(),paper.getAcknowledgement());
         paperInfo.setPaper(pd);
-        ArrayList<Star> stars=(ArrayList<Star>)starDao.findStarsByPaperId(Long.toString(paperId));
+        ArrayList<Star> stars=(ArrayList<Star>)starDao.findStarsByPaperId(paperId);
         int starNumber=0;
         double totalScore=0;
         int scoreCount=0;
@@ -267,7 +276,7 @@ public class PaperController {
         paperInfo.setScore((int)avgScore);
         paperInfo.setStars(starNumber);
 
-        ArrayList<Comment> comments=(ArrayList<Comment>)commentDao.findCommentsByPaperId(Long.toString(paperId));
+        ArrayList<Comment> comments=(ArrayList<Comment>)commentDao.findCommentsByPaperId(paperId);
         CommentDto[] commentDtos= new CommentDto[comments.size()];
         int commentCount=0;
         for(Comment comment:comments){

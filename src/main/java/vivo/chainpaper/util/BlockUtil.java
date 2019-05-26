@@ -25,16 +25,16 @@ public class BlockUtil {
         }
         return null;
     }
-    public static String getInfoFromChainStore(Block block){
-        String url=masterIp+"/findBlockInfo?blockIndex="+block.getBlockIndex()+"&&blockOffset="+block.getBlockOffset();
-        String response=HttpUtil.getData(url);
-        JSONObject jsonObject= JSONObject.fromObject(response);
-        if(jsonObject==null){
-            System.out.println("Can not find master!");
-            return null;
-        }
-        String data=jsonObject.getString("data");
-
-        return data;
-    }
+//    public static String getInfoFromChainStore(Block block){
+//        String url=masterIp+"/findBlockInfo?blockIndex="+block.getBlockIndex()+"&&blockOffset="+block.getBlockOffset();
+//        String response=HttpUtil.getData(url);
+//        JSONObject jsonObject= JSONObject.fromObject(response);
+//        if(jsonObject==null){
+//            System.out.println("Can not find master!");
+//            return null;
+//        }
+//        String data=jsonObject.getString("data");
+//
+//        return data;
+//    }
 }
