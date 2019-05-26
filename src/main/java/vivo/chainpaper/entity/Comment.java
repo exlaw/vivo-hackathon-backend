@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Time;
 
+
 @Entity
 @Table(name = "comment")
 public class Comment {

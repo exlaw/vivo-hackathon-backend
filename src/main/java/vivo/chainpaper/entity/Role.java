@@ -4,6 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Role {
+
     public final static String USER_NAME = "ROLE_USER";
     public final static String TEACHER_NAME = "ROLE_TEACHER";
     public final static String ADMIN_NAME = "ROLE_ADMIN";

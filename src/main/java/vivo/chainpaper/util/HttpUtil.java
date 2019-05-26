@@ -51,7 +51,7 @@ public class HttpUtil {
             return sb.toString();
         } catch (IOException e) {
             //logger.error("Error connecting to " + urlStr + ": " + e.getMessage());
-            e.printStackTrace();
+            //e.printStackTrace();
             throw new SystemException();
         } finally {
             try {
