@@ -67,7 +67,7 @@ public class ImageUploadBlServiceImpl implements ImageUploadBlService {
         try {
             String uid = generateImageKey();
             User user = userDao.findUserByUsername(username);
-            uid = user.getNumber() + uid;
+            uid = "user" + uid;
             String url = uploadImage(uid, multipartFile.getOriginalFilename().split("\\.")[1], multipartFile.getBytes());
             return new UploadImageResponse(uid, url);
         } catch (IOException e) {

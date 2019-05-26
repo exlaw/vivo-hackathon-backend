@@ -7,16 +7,14 @@ import java.util.Collection;
 public class JwtUser implements UserDetails {
     private final String username;
     private final String password;
-    private final Collection<JwtRole> authorities;
     private final boolean accountNonExpired = true;
     private final boolean accountNonLocked = true;
     private final boolean credentialsNonExpired = true;
     private final boolean enabled = true;
 
-    public JwtUser(String username, String password, Collection<JwtRole> authorities) {
+    public JwtUser(String username, String password) {
         this.username = username;
         this.password = password;
-        this.authorities = authorities;
     }
 
     @Override
@@ -57,6 +55,6 @@ public class JwtUser implements UserDetails {
 
     @Override
     public Collection<JwtRole> getAuthorities() {
-        return authorities;
+        return null;
     }
 }

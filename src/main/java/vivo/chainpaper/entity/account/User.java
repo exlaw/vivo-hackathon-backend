@@ -16,46 +16,22 @@ public class User {
     private String avatarUrl;
     @Column(name = "username")
     private String username;
-    @Column(name = "email")
-    private String email;
-    @Column(name = "phone")
-    private String phone;
-    @Column(name = "real_name")
-    private String realName;
-    @Column(name = "student_number")
-    private String number;
     @Column(name = "password")
     private String password;
     @Column(name = "role")
-    private Role role;
+    private String role;
     @Column(name = "validationToken")
     private String validationToken;
-    @Column(name = "validationCode")
-    private String validationCode;
-    @Column(name = "isValidated")
-    private boolean isValidated;
-    @Column(name = "isActive")
-    private boolean isActive;
-    @Column(name = "time")
-    private long time;
 
     public User() {
     }
 
-    public User(String avatarUrl, String username, String email, String phone, String realName, String number, String password, Role role, String validationToken, String validationCode, boolean isValidated, boolean isActive, long time) {
+    public User(String avatarUrl, String username, String password, String role, String validationToken) {
         this.avatarUrl = avatarUrl;
         this.username = username;
-        this.email = email;
-        this.phone = phone;
-        this.realName = realName;
-        this.number = number;
         this.password = password;
         this.role = role;
         this.validationToken = validationToken;
-        this.validationCode = validationCode;
-        this.isValidated = isValidated;
-        this.isActive = isActive;
-        this.time = time;
     }
 
     public String getId() {
@@ -82,13 +58,6 @@ public class User {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPassword() {
         return password;
@@ -98,11 +67,11 @@ public class User {
         this.password = password;
     }
 
-    public Role getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
@@ -114,59 +83,4 @@ public class User {
         this.validationToken = validationToken;
     }
 
-    public String getValidationCode() {
-        return validationCode;
-    }
-
-    public void setValidationCode(String validationCode) {
-        this.validationCode = validationCode;
-    }
-
-    public boolean isValidated() {
-        return isValidated;
-    }
-
-    public void setValidated(boolean validated) {
-        isValidated = validated;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-
-    public long getTime() {
-        return time;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
-    }
 }

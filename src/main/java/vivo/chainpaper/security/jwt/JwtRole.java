@@ -21,7 +21,7 @@ public class JwtRole implements GrantedAuthority {
     }
 
     public JwtRole(Role role) {
-        this.roleName = role.getName();
+//        this.roleName = role.getName();
     }
 
     /**
