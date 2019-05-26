@@ -4,11 +4,13 @@ public class Reference {
     String type;
     String doi;
     String paperId;
+    String context;
 
-    public Reference(String type, String doi, String paperId) {
+    public Reference(String type, String doi, String paperId,String context) {
         this.type = type;
         this.doi = doi;
         this.paperId = paperId;
+        this.context=context;
     }
 
     public String getType() {
@@ -33,5 +35,13 @@ public class Reference {
 
     public void setPaperId(String paperId) {
         this.paperId = paperId;
+    }
+
+    public String getContext() {
+        return context;
+    }
+
+    public void setContext(String context) {
+        this.context = context;
     }
 }
