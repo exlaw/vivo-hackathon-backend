@@ -1,17 +1,22 @@
 package vivo.chainpaper.springcontroller;
 
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
+import vivo.chainpaper.dto.Block;
+import vivo.chainpaper.entity.Paper;
+import vivo.chainpaper.parameters.paper.PaperDraft;
+import vivo.chainpaper.parameters.paper.PaperUploadParams;
 import vivo.chainpaper.response.Response;
+import vivo.chainpaper.response.paper.PaperUploadResponse;
+import vivo.chainpaper.util.UserInfoUtil;
 
-@RestController()
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@RestController(value="/papers")
 public class PaperController {
     private final PaperBlService paperService;
 
@@ -20,14 +25,20 @@ public class PaperController {
         this.paperService=paperBlService;
     }
 
-    @ApiOperation(value = "上传paper", notes = "用户上传论文")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "username", value = "用户名", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
-    })
-    @RequestMapping(value = "papers", method = RequestMethod.POST)
-    public ResponseEntity<Response> uploadPaper(){
-        return null;
+
+    @RequestMapping(value = "", method = RequestMethod.POST,
+            consumes = {"application/json", "application/xml"},
+            produces = {"application/json", "application/xml"})
+    public @ResponseBody PaperUploadResponse
+    uploadPaper(@RequestBody PaperUploadParams params, HttpServletResponse response){
+        PaperDraft pd=params.getPaperDraft();
+        Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername());
+        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
+        paper.setIndex(block.getBlockIndex());
+        paper.setOffset(block.getBlockOffset());
+        paperService.addPaperToDatabase(paper);
+        response.setStatus(200);
+        return new PaperUploadResponse(paper.getId());
     }
 
 
