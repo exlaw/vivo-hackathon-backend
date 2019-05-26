@@ -1,9 +1,7 @@
 package vivo.chainpaper.springcontroller;
 
 
-import javafx.print.PaperSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.CommentDao;
@@ -15,9 +13,7 @@ import vivo.chainpaper.dto.PaperInfo;
 import vivo.chainpaper.entity.Comment;
 import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.Star;
-import vivo.chainpaper.entity.account.User;
 import vivo.chainpaper.parameters.paper.*;
-import vivo.chainpaper.response.Response;
 import vivo.chainpaper.response.paper.ListPaperGetResponse;
 import vivo.chainpaper.response.paper.PaperUploadResponse;
 import vivo.chainpaper.response.paper.SinglePaperGetResponse;

@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb0c708-6661-4f53-bfde-8e18b26857a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/CollabrationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Collabration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/parameters/Collabrate/CollabrateResultParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoInvitationResponce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoRequestResponce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InvitationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/NormalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/RequestResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/upload/ImageUploadBlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/upload/ImageUploadBlServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/account/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/account/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/user/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/user/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -169,21 +151,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/collabration">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
-              <filtering>
-                <filter text="" />
-              </filtering>
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+            <state relative-caret-position="3547">
+              <caret line="174" column="9" lean-forward="true" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -273,33 +265,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoRequestResponce.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-              <folding>
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#896#897#0" expanded="true" />
-                <element signature="e#934#935#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1068#1069#0" expanded="true" />
-                <element signature="e#1102#1103#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1178#1179#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -332,7 +297,6 @@
         <option value="$PROJECT_DIR$/sonar-project.properties" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/paper/PaperBlServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Paper.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/upload/ImageUploadBlServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/account/UserDao.java" />
@@ -358,6 +322,7 @@
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoPersonResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/CollabrationDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" />
       </list>
     </option>
   </component>
@@ -476,34 +441,6 @@
               <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
-              <item name="response" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
@@ -702,7 +639,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558845037501</updated>
-      <workItem from="1558845044311" duration="17203000" />
+      <workItem from="1558845044311" duration="17965000" />
     </task>
     <servers />
   </component>
@@ -739,12 +676,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21722000" />
+    <option name="totallyTimeSpent" value="22484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19808307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -758,14 +695,14 @@
       <window_info anchor="bottom" id="SonarLint" order="2" weight="0.32944345" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.33752245" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.33752245" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32883817" />
       <window_info anchor="bottom" id="Spring" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.30879712" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.30879712" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" weight="0.32944345" />
@@ -790,16 +727,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/paper/PaperBlServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/refs">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
@@ -827,13 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1377,8 +1297,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+        <state relative-caret-position="542">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3547">
+          <caret line="174" column="9" lean-forward="true" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
