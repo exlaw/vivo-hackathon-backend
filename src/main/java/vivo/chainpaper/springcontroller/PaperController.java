@@ -217,6 +217,25 @@ public class PaperController {
         return new ListPaperGetResponse(paperInfos);
     }
 
+    @RequestMapping(value = "/recommendation",
+            method = RequestMethod.GET,
+            produces = {"application/json", "application/xml"})
+    public @ResponseBody
+    ResponseEntity<Response> getPaperRecommend(){
+        ArrayList<Paper> papers=(ArrayList<Paper>)paperDao.findAll();
+
+        if(papers.size()==0){
+            return new ResponseEntity<>(new SinglePaperGetResponse(null), HttpStatus.OK);
+        }else {
+            int index=(int)(Math.random()*papers.size());
+            PaperInfo paperInfo=getPaperInfoFromId(papers.get(index).getId());
+            return new ResponseEntity<>(new SinglePaperGetResponse(paperInfo), HttpStatus.OK);
+        }
+
+    }
+
+
+
 
     private PaperInfo getPaperInfoFromId(String paperId){
         Paper paper;

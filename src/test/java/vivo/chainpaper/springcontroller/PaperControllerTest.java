@@ -54,5 +54,6 @@ public class PaperControllerTest {
         paperController.getComment(paperUploadResponse.getPaperId());
         paperController.getPaperInfo(paperUploadResponse.getPaperId());
         paperController.getPapersInfo();
+        paperController.getPaperRecommend();
     }
 }
