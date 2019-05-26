@@ -11,5 +11,7 @@ public interface PaperBlService {
         Block addPaperToChainStore(PaperDraft paperDraft,String writer);
         //论文入库
         void addPaperToDatabase(Paper paper);
-        //论文查找
+
+
+
 }

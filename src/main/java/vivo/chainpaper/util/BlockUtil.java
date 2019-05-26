@@ -9,7 +9,7 @@ public class BlockUtil {
     public static Block sendDataToChainStore(String data){
         String data_json="{ \"info\" : \""+data+"\" }"; // change data to json
         try {
-            String response=HttpUtil.postData(masterIp, data_json, "application/json");
+            String response=HttpUtil.postData(masterIp+"/saveInfo", data_json, "application/json");
             JSONObject jsonObject= JSONObject.fromObject(response);
             long blockIndex=jsonObject.getLong("blockIndex");
             long offset=jsonObject.getLong("offset");
