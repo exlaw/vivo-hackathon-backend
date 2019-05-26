@@ -2,6 +2,7 @@ package vivo.chainpaper.bl.paper;
 
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dto.Block;
@@ -10,6 +11,7 @@ import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.parameters.paper.PaperDraft;
 import vivo.chainpaper.util.BlockUtil;
 
+@Service
 public class PaperBlServiceImpl implements PaperBlService {
 
    private final PaperDao paperDao;

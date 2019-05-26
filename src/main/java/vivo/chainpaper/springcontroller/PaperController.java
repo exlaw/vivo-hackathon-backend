@@ -11,6 +11,7 @@ import vivo.chainpaper.parameters.paper.PaperDraft;
 import vivo.chainpaper.parameters.paper.PaperUploadParams;
 import vivo.chainpaper.response.Response;
 import vivo.chainpaper.response.paper.PaperUploadResponse;
+import vivo.chainpaper.util.TimeUtil;
 import vivo.chainpaper.util.UserInfoUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,13 +33,14 @@ public class PaperController {
     public @ResponseBody PaperUploadResponse
     uploadPaper(@RequestBody PaperUploadParams params, HttpServletResponse response){
         PaperDraft pd=params.getPaperDraft();
-        Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement());
+        Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
         Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
-        paper.setIndex(block.getBlockIndex());
-        paper.setOffset(block.getBlockOffset());
-        paperService.addPaperToDatabase(paper);
-        response.setStatus(200);
-        return new PaperUploadResponse(paper.getId());
+//        paper.setIndex(block.getBlockIndex());
+//        paper.setOffset(block.getBlockOffset());
+//        paperService.addPaperToDatabase(paper);
+//        response.setStatus(200);
+        return null;
+//        return new PaperUploadResponse(paper.getId());
     }
 
 
