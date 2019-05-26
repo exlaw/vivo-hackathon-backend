@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface CollabrationDao extends JpaRepository<Collabration, String> {
 
-    @Query(value = "select c.collabrationID from Collabration c where c.toUsername=?1 and c.type=?2")
+    @Query(value = "select c.collabrationID from Collabration c where c.toUsername=?1 and c.type=?2 and c.state=false")
     List<String> getByRequester(String username, String type);
 
-    @Query(value = "select c.collabrationID from Collabration c where c.fromUsername=?1 and c.type=?2")
+    @Query(value = "select c.collabrationID from Collabration c where c.toUsername=?1 and c.type=?2 and c.state=false")
     List<String> getByInviter(String username, String type);
 
 

@@ -3,7 +3,9 @@ package vivo.chainpaper.springcontroller.account;
 import io.swagger.annotations.*;
 import vivo.chainpaper.bl.account.UserBlServiceImpl;
 import vivo.chainpaper.dao.CollabrationDao;
+import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dao.account.UserDao;
+import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.account.User;
 import vivo.chainpaper.exception.*;
 import vivo.chainpaper.parameters.user.RegisterParams;
@@ -28,12 +30,14 @@ public class UserController {
 
     private final CollabrationDao collabrationDao;
 
+    private final PaperDao paperDao;
+
     @Autowired
-    public UserController(UserBlServiceImpl userBlService, UserDao userDao, CollabrationDao collabrationDao) {
+    public UserController(UserBlServiceImpl userBlService, UserDao userDao, CollabrationDao collabrationDao, PaperDao paperDao) {
         this.userBlService = userBlService;
         this.userDao = userDao;
         this.collabrationDao = collabrationDao;
-
+        this.paperDao = paperDao;
     }
 
     @ApiOperation(value = "用户登录", notes = "验证用户登录并返回token")
@@ -49,8 +53,8 @@ public class UserController {
     @ResponseBody
     public ResponseEntity<Response> login(
             @RequestParam("username") String username, @RequestParam("password") String password) {
+        System.out.println("here");
         try {
-
             LoginResponse loginResponse = userBlService.login(username, password);
             return new ResponseEntity<>(loginResponse, HttpStatus.OK);
         } catch (WrongUsernameOrPasswordException  e) {
@@ -103,14 +107,22 @@ public class UserController {
             @PathVariable("userId") String userId
     ){
         User user = this.userDao.findUserByUsername(userId);
-        List<String> papers = new ArrayList<>();
-        List<String>  collabrationInvitationIds = this.collabrationDao.getByRequester(user.getUsername(), "request");
-        List<String>  collabrationRequestIds = this.collabrationDao.getByInviter(user.getUsername(), "invitation");
 
-        InfoPersonResponse response = new InfoPersonResponse(user.getId(), user.getUsername(), user.getRole()
-        ,0 , papers, collabrationInvitationIds, collabrationRequestIds);
+        List<String> paperIds = paperDao.findPapersByWriter(user.getUsername());
+        List<String>  collabrationInvitationIds = this.collabrationDao.getByInviter(user.getUsername(), "invitation");
+        List<String>  collabrationRequestIds = this.collabrationDao.getByRequester(user.getUsername(), "request");
+
+        List<String>  paperIdsInCollabration = new ArrayList<>();
+
+        List<Paper> papers = this.paperDao.findAll();
+        for(Paper paper : papers) {
+            if(paper.getCooperator().contains(userId) && paper.getCooperator().size() > 1) {
+                paperIdsInCollabration.add(paper.getId());
+            }
+        }
+        InfoPersonResponse response = new InfoPersonResponse(user.getId(), user.getRole(), user.getUsername()
+        ,0 , paperIds, collabrationInvitationIds, collabrationRequestIds, paperIdsInCollabration);
         return new ResponseEntity<>(response, HttpStatus.OK);
-
     }
 
 }

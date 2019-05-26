@@ -27,7 +27,10 @@ public class Comment {
     @Column(name ="comment")
     String comment;
 
-    public Comment( String userId, String paperId, String comment) {
+    public Comment() {
+    }
+
+    public Comment(String userId, String paperId, String comment) {
         this.time_stamp= TimeUtil.getTimeStamp();
         this.userId = userId;
         this.paperId = paperId;

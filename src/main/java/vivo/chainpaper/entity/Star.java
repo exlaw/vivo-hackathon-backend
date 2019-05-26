@@ -24,6 +24,9 @@ public class Star {
     @Column(name="score")
     int score=0;//评分 1-10
 
+    public Star() {
+    }
+
     public Star(String userId, String paperId) {
         this.userId = userId;
         this.paperId = paperId;

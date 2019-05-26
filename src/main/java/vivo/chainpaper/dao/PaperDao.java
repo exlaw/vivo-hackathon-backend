@@ -10,5 +10,6 @@ public interface PaperDao extends JpaRepository<Paper, String> {
     @Query(value = "select p.writer from Paper p where p.id=?1")
     String findUsernameByPaperId(String paperId);
 
-    List<Paper> findPapersByWriter(String writer);
+    @Query(value = "select p.id from Paper p where p.writer=?1")
+    List<String> findPapersByWriter(String writer);
 }

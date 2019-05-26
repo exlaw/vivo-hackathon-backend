@@ -19,18 +19,21 @@ public class InfoPersonResponse extends Response {
     private String role;
     private String username;
     private int score;
-    private List<String> papers;
+    private List<String> paperIds;
     private List<String> collabrationInvitationIds;
     private List<String> collabrationRequestIds;
+    List<String>  paperIdsInCollabration;
 
-    public InfoPersonResponse(String userId, String role, String username, int score, List<String> papers, List<String> collabrationInvitationIds, List<String> collabrationRequestIds) {
+
+    public InfoPersonResponse(String userId, String role, String username, int score, List<String> papers, List<String> collabrationInvitationIds, List<String> collabrationRequestIds, List<String> paperIdsInCollabration) {
         this.userId = userId;
         this.role = role;
         this.username = username;
         this.score = score;
-        this.papers = papers;
+        this.paperIds = papers;
         this.collabrationInvitationIds = collabrationInvitationIds;
         this.collabrationRequestIds = collabrationRequestIds;
+        this.paperIdsInCollabration = paperIdsInCollabration;
     }
 
     public String getUserId() {
@@ -66,11 +69,11 @@ public class InfoPersonResponse extends Response {
     }
 
     public List<String> getPapers() {
-        return papers;
+        return paperIds;
     }
 
     public void setPapers(List<String> papers) {
-        this.papers = papers;
+        this.paperIds = papers;
     }
 
     public List<String> getCollabrationInvitationIds() {
@@ -87,5 +90,13 @@ public class InfoPersonResponse extends Response {
 
     public void setCollabrationRequestIds(List<String> collabrationRequestIds) {
         this.collabrationRequestIds = collabrationRequestIds;
+    }
+
+    public List<String> getPaperIdsInCollabration() {
+        return paperIdsInCollabration;
+    }
+
+    public void setPaperIdsInCollabration(List<String> paperIdsInCollabration) {
+        this.paperIdsInCollabration = paperIdsInCollabration;
     }
 }

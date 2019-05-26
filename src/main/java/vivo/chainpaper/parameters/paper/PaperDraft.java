@@ -1,7 +1,7 @@
 package vivo.chainpaper.parameters.paper;
 
 public class PaperDraft {
-    Reference reference[];
+    Reference refs[];
     String abstractContent;
     String introduction;
     String content;
@@ -11,7 +11,7 @@ public class PaperDraft {
     String acknowledgement;
 
     public PaperDraft(Reference[] reference, String abstractContent, String introduction, String content, String conclusion, String title, String keywords, String acknowledgement) {
-        this.reference = reference;
+        this.refs = reference;
         this.abstractContent = abstractContent;
         this.introduction = introduction;
         this.content = content;
@@ -22,11 +22,11 @@ public class PaperDraft {
     }
 
     public Reference[] getReference() {
-        return reference;
+        return refs;
     }
 
     public void setReference(Reference[] reference) {
-        this.reference = reference;
+        this.refs = reference;
     }
 
     public String getAbstractContent() {

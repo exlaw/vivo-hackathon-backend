@@ -1,12 +1,11 @@
 package vivo.chainpaper.entity;
 
-import org.hibernate.annotations.GenericGenerator;
 import vivo.chainpaper.parameters.paper.Reference;
-import vivo.chainpaper.util.TimeUtil;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Entity
 @Table(name = "paper")
@@ -62,7 +61,10 @@ public class Paper {
     @Column(name="paper_state")
     int paper_state=0;// 0 讨论中，1已提交
 
-    public Paper(String abstractContent, String introduction, String content, String conclusion, Reference[] refs, String writer,String title,String keywords,String acknowledgement, String t) {
+    public Paper() {
+    }
+
+    public Paper(String abstractContent, String introduction, String content, String conclusion, Reference[] refs, String writer, String title, String keywords, String acknowledgement, String t) {
         this.abstractContent = abstractContent;
        this.introduction = introduction;
         this.content = content;
@@ -70,7 +72,7 @@ public class Paper {
         this.writer = writer;
         cooperator.add(writer);//合作者第一项是作者自己
         this.c_time = t;
-        this.id= TimeUtil.getTimeStamp() + (int)(Math.random()*100000);
+        this.id= Long.toString(System.currentTimeMillis())+ new Random().nextInt(100000);
         this.title=title;
         this.keywords=keywords;
         this.acknowledgement=acknowledgement;

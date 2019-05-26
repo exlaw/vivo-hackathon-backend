@@ -1,7 +1,10 @@
 package vivo.chainpaper.springcontroller;
 
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.CommentDao;
@@ -14,6 +17,10 @@ import vivo.chainpaper.entity.Comment;
 import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.Star;
 import vivo.chainpaper.parameters.paper.*;
+import vivo.chainpaper.response.CommentResponse;
+import vivo.chainpaper.response.Response;
+import vivo.chainpaper.response.ScoreResponse;
+import vivo.chainpaper.response.StarResponse;
 import vivo.chainpaper.response.paper.ListPaperGetResponse;
 import vivo.chainpaper.response.paper.PaperUploadResponse;
 import vivo.chainpaper.response.paper.SinglePaperGetResponse;
@@ -23,13 +30,16 @@ import vivo.chainpaper.util.UserInfoUtil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.List;
 
-@RestController(value="/papers")
+@RestController
+@RequestMapping("/papers")
 public class PaperController {
     private final PaperBlService paperService;
     private final PaperDao paperDao;
     private final StarDao starDao;
     private final CommentDao commentDao;
+
 
     @Autowired
     public PaperController(PaperBlService paperBlService,PaperDao paperDao,StarDao starDao,CommentDao commentDao){
@@ -44,14 +54,13 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public @ResponseBody PaperUploadResponse
-    uploadPaper(@RequestBody PaperUploadParams params, HttpServletResponse response){
+    uploadPaper(@RequestBody PaperUploadParams params){
         PaperDraft pd=params.getPaperDraft();
+        System.out.println(new Gson().toJson(pd));
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
-        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
-        paper.setIndexs(block.getBlockIndex());
-        paper.setOffsets(block.getBlockOffset());
-
-        response.setStatus(200);
+//        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
+//        paper.setIndexs(block.getBlockIndex());
+//        paper.setOffsets(block.getBlockOffset());
         setRefs(paper,pd);
         paperService.addPaperToDatabase(paper);
         return new PaperUploadResponse(paper.getId());
@@ -62,62 +71,118 @@ public class PaperController {
             method = RequestMethod.PUT,
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
-    public @ResponseBody PaperUploadResponse updateDemo(@PathVariable("paperId") long paperId, @RequestBody PaperUploadParams params,
-                           HttpServletRequest request, HttpServletResponse response){
+    public @ResponseBody PaperUploadResponse updateDemo(@PathVariable("paperId") String paperId, @RequestBody PaperUploadParams params){
+//        System.out.println(new Gson());
         PaperDraft pd=params.getPaperDraft();
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
-        Paper paper0=paperDao.findById(Long.toString(paperId)).get();
-        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
-        paper.setId(paper0.getId());
-        paper.setIndexs(block.getBlockIndex());
-        paper.setOffsets(block.getBlockOffset());
+//        Paper paper0=paperDao.findById(Long.toString(paperId)).get();
+//        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
+//        paper.setId(paper0.getId());
+//        paper.setIndexs(block.getBlockIndex());
+//        paper.setOffsets(block.getBlockOffset());
+        paper.setId(paperId);
         setRefs(paper,pd);
         paperDao.save(paper);
-        response.setStatus(200);
-        return new PaperUploadResponse(Long.toString(paperId));
+        return new PaperUploadResponse(paperId);
     }
 
     //查看已经发表的论文列表
 
     //点赞
-    @RequestMapping(value = "/{paperId}/star", method = RequestMethod.POST,
-            consumes = {"application/json", "application/xml"},
-            produces = {"application/json", "application/xml"})
+    @RequestMapping(value = "/{paperId}/star", method = RequestMethod.POST)
     public void
-    uploadStar(@PathVariable("paperId") long paperId, HttpServletResponse response){
-       boolean isExited=starDao.existsById(UserInfoUtil.getUsername()+Long.toString(paperId));
+    uploadStar(@PathVariable("paperId") long paperId){
+        String id = UserInfoUtil.getUsername()+Long.toString(paperId);
+       boolean isExited=starDao.existsById(id);
         Star star;
        if(isExited){
-           star=starDao.findById(Long.toString(paperId)).get();
-
-
+           star=starDao.findById(id).get();
+           star.setStar(star.getStar() == 0?1:0);
        }else{
             star=new Star(UserInfoUtil.getUsername(),Long.toString(paperId));
-
+            star.setStar(1);
        }
-       star.setStar(1);
+
        starDao.save(star);
-       response.setStatus(200);
+    }
+
+    /**
+     *  18.	 获得文章现在的星的数量，以及自己是否已经打过星
+     *
+     * GET /papers/{paperId}/star
+     *
+     * 200: {
+     * stars: number;
+     * stared: boolean;
+     * }
+     */
+
+    @ResponseBody
+    @RequestMapping(value = "/{paperId}/star", method = RequestMethod.GET,
+            consumes = {"*/*"},
+            produces = {"application/json", "application/xml"})
+    public ResponseEntity<Response>
+    getStar(@PathVariable("paperId") String paperId){
+        String user = UserInfoUtil.getUsername();
+        List<String> users = this.starDao.findStarByPaperId(paperId);
+        int stars = users.size();
+        boolean stared = users.contains(user);
+        return new ResponseEntity<>(new StarResponse(stars, stared), HttpStatus.OK);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/{paperId}/score", method = RequestMethod.GET,
+            consumes = {"*/*"},
+            produces = {"application/json", "application/xml"})
+    public ResponseEntity<Response>
+    getScore(@PathVariable("paperId") String paperId){
+        String user = UserInfoUtil.getUsername();
+        List<Integer> scores = this.starDao.findScoreByPaperId(paperId);
+        int score = 0;
+        int myScore = 0;
+        if(!scores.isEmpty()){
+            for(int s : scores){
+                score += s;
+            }
+            score/=scores.size();
+            try {
+                myScore = this.starDao.check(paperId, user);
+            }catch (Exception e){
+                myScore = 0;
+            }
+        }
+        return new ResponseEntity<>(new ScoreResponse(score, myScore), HttpStatus.OK);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/{paperId}/comment", method = RequestMethod.GET,
+            consumes = {"*/*"},
+            produces = {"application/json", "application/xml"})
+    public ResponseEntity<Response>
+    getComment(@PathVariable("paperId") String paperId){
+        List<Comment> comments = this.commentDao.findCommentsByPaperId(paperId);
+        return new ResponseEntity<>(new CommentResponse(comments), HttpStatus.OK);
     }
 
 
     //打分
+
     @RequestMapping(value = "/{paperId}/score", method = RequestMethod.POST,
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public void
-    uploadStar(@PathVariable("paperId") long paperId, @RequestBody ScoreParameter params, HttpServletResponse response){
-        String uid=UserInfoUtil.getUsername();
-        boolean isExited=starDao.existsById(uid+Long.toString(paperId));
+    uploadStar(@PathVariable("paperId") long paperId, @RequestBody ScoreParameter params){
+
+        String id=UserInfoUtil.getUsername() + Long.toString(paperId);
+        boolean isExited=starDao.existsById(id);
         Star star;
         if(isExited){
-            star=starDao.findById(Long.toString(paperId)).get();
+            star=starDao.findById(id).get();
         }else{
-            star=new Star(uid,Long.toString(paperId));
+            star=new Star(id,Long.toString(paperId));
         }
         star.setScore(params.getScore());
         starDao.save(star);
-        response.setStatus(200);
     }
 
     //评论
@@ -125,27 +190,25 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public void
-    uploadComment(@PathVariable("paperId") long paperId, @RequestBody CommentParameter params, HttpServletResponse response){
+    uploadComment(@PathVariable("paperId") long paperId, @RequestBody CommentParameter params){
         Comment comment=new Comment(UserInfoUtil.getUsername(),Long.toString(paperId),params.getComment());
         commentDao.save(comment);
-        response.setStatus(200);
     }
 
     @RequestMapping(value = "/{paperId}",
             method = RequestMethod.GET,
             produces = {"application/json", "application/xml"})
-    public @ResponseBody
-    SinglePaperGetResponse getPaperInfo(@PathVariable("paperId") long paperId, HttpServletRequest request, HttpServletResponse response){
+    public @ResponseBody ResponseEntity<Response>
+     getPaperInfo(@PathVariable("paperId") long paperId){
         PaperInfo paperInfo=getPaperInfoFromId(paperId);
-        response.setStatus(200);
-        return new SinglePaperGetResponse(paperInfo);
+        return new ResponseEntity<>(new SinglePaperGetResponse(paperInfo), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/",
+    @RequestMapping(value = "",
             method = RequestMethod.GET,
             produces = {"application/json", "application/xml"})
     public @ResponseBody
-    ListPaperGetResponse getPapersInfo(HttpServletRequest request, HttpServletResponse response){
+    ListPaperGetResponse getPapersInfo(){
         ArrayList<Paper> papers=(ArrayList<Paper>)paperDao.findAll();
         PaperInfo[] paperInfos=new PaperInfo[papers.size()];
         for(int i=0;i<paperInfos.length;i++){
@@ -156,8 +219,13 @@ public class PaperController {
 
 
     private PaperInfo getPaperInfoFromId(long paperId){
-        Paper paper=paperDao.findById(Long.toString(paperId)).get();
-        ArrayList<String> names=(ArrayList<String>) paper.getCooperator();
+        Paper paper;
+        if(paperDao.findById(Long.toString(paperId)).isPresent()) {
+            paper = paperDao.findById(Long.toString(paperId)).get();
+        }else{
+            return null;
+        }
+        List<String> names = paper.getCooperator();
         String[] authors=new String[names.size()];
         names.toArray(authors);
         PaperInfo paperInfo=new PaperInfo();

@@ -12,12 +12,14 @@ public class InfoRequestResponce extends Response{
     private String requesteeId;
     private String requesterId;
     private String paperId;
+    private String collabrationRequestId;
 
-    public InfoRequestResponce(String time, String requesteeId, String requesterId, String paperId) {
+    public InfoRequestResponce(String time, String requesteeId, String requesterId, String paperId, String collabrationInvitationId) {
         this.time = time;
         this.requesteeId = requesteeId;
         this.requesterId = requesterId;
         this.paperId = paperId;
+        this.collabrationRequestId = collabrationInvitationId;
     }
 
     public String getTime() {
@@ -50,5 +52,13 @@ public class InfoRequestResponce extends Response{
 
     public void setPaperId(String paperId) {
         this.paperId = paperId;
+    }
+
+    public String getCollabrationInvitationId() {
+        return collabrationRequestId;
+    }
+
+    public void setCollabrationInvitationId(String collabrationInvitationId) {
+        this.collabrationRequestId = collabrationInvitationId;
     }
 }

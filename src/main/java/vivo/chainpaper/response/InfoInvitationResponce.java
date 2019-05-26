@@ -12,12 +12,22 @@ public class InfoInvitationResponce extends Response {
     private String inviteeId;
     private String inviterId;
     private String paperId;
+    private String collabrationInvitationId;
 
-    public InfoInvitationResponce(String time, String inviteeId, String inviterId, String paperId) {
+    public InfoInvitationResponce(String time, String inviteeId, String inviterId, String paperId, String collabrationInvitationId) {
         this.time = time;
         this.inviteeId = inviteeId;
         this.inviterId = inviterId;
         this.paperId = paperId;
+        this.collabrationInvitationId = collabrationInvitationId;
+    }
+
+    public String getCollabrationInvitationId() {
+        return collabrationInvitationId;
+    }
+
+    public void setCollabrationInvitationId(String collabrationInvitationId) {
+        this.collabrationInvitationId = collabrationInvitationId;
     }
 
     public String getTime() {
