@@ -10,12 +10,15 @@ public class PaperDraft {
     String keywords;
     String acknowledgement;
 
-    public PaperDraft(Reference[] reference, String abstractContent, String introduction, String content, String conclusion) {
+    public PaperDraft(Reference[] reference, String abstractContent, String introduction, String content, String conclusion, String title, String keywords, String acknowledgement) {
         this.reference = reference;
         this.abstractContent = abstractContent;
         this.introduction = introduction;
         this.content = content;
         this.conclusion = conclusion;
+        this.title = title;
+        this.keywords = keywords;
+        this.acknowledgement = acknowledgement;
     }
 
     public Reference[] getReference() {

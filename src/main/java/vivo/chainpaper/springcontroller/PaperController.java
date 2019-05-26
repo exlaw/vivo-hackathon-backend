@@ -10,21 +10,23 @@ import vivo.chainpaper.dao.CommentDao;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dao.StarDao;
 import vivo.chainpaper.dto.Block;
+import vivo.chainpaper.dto.CommentDto;
+import vivo.chainpaper.dto.PaperInfo;
 import vivo.chainpaper.entity.Comment;
 import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.Star;
 import vivo.chainpaper.entity.account.User;
-import vivo.chainpaper.parameters.paper.CommentParameter;
-import vivo.chainpaper.parameters.paper.PaperDraft;
-import vivo.chainpaper.parameters.paper.PaperUploadParams;
-import vivo.chainpaper.parameters.paper.ScoreParameter;
+import vivo.chainpaper.parameters.paper.*;
 import vivo.chainpaper.response.Response;
+import vivo.chainpaper.response.paper.ListPaperGetResponse;
 import vivo.chainpaper.response.paper.PaperUploadResponse;
+import vivo.chainpaper.response.paper.SinglePaperGetResponse;
 import vivo.chainpaper.util.TimeUtil;
 import vivo.chainpaper.util.UserInfoUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 @RestController(value="/papers")
 public class PaperController {
@@ -131,5 +133,87 @@ public class PaperController {
         response.setStatus(200);
     }
 
+    @RequestMapping(value = "/{paperId}",
+            method = RequestMethod.GET,
+            produces = {"application/json", "application/xml"})
+    public @ResponseBody
+    SinglePaperGetResponse getPaperInfo(@PathVariable("paperId") long paperId, HttpServletRequest request, HttpServletResponse response){
+        PaperInfo paperInfo=getPaperInfoFromId(paperId);
+        response.setStatus(200);
+        return new SinglePaperGetResponse(paperInfo);
+    }
+
+    @RequestMapping(value = "/",
+            method = RequestMethod.GET,
+            produces = {"application/json", "application/xml"})
+    public @ResponseBody
+    ListPaperGetResponse getPapersInfo(HttpServletRequest request, HttpServletResponse response){
+        ArrayList<Paper> papers=(ArrayList<Paper>)paperDao.findAll();
+        PaperInfo[] paperInfos=new PaperInfo[papers.size()];
+        for(int i=0;i<paperInfos.length;i++){
+            paperInfos[i]=getPaperInfoFromId(Long.parseLong(papers.get(i).getId()));
+        }
+        return new ListPaperGetResponse(paperInfos);
+    }
+
+
+    private PaperInfo getPaperInfoFromId(long paperId){
+        Paper paper=paperDao.findById(Long.toString(paperId)).get();
+        ArrayList<String> names=(ArrayList<String>) paper.getCooperator();
+        String[] authors=new String[names.size()];
+        names.toArray(authors);
+        PaperInfo paperInfo=new PaperInfo();
+        paperInfo.setAuthors(authors);
+        paperInfo.setPaperId(Long.toString(paperId));
+        paperInfo.setUploadTime(paper.getC_time());
+        paperInfo.setState(paper.getPaper_state());
+        Reference[] references=new Reference[paper.getRefs().size()];
+        for(int i=0;i<paper.getRefs().size();i++){
+            Reference ref;
+            if(paper.getReference_type().get(i).equals("published")) {
+                ref = new Reference("published",paper.getRefs().get(i),null);
+            }else{
+                 ref = new Reference("chainpaper",null,paper.getRefs().get(i));
+            }
+            references[i]=ref;
+        }
+        PaperDraft pd=new PaperDraft(references,paper.getAbstractContent(),paper.getIntroduction(),paper.getContent(),paper.getConclusion(),paper.getTitle(),paper.getKeywords(),paper.getAcknowledgement());
+        paperInfo.setPaper(pd);
+        ArrayList<Star> stars=(ArrayList<Star>)starDao.findStarsByPaperId(Long.toString(paperId));
+        int starNumber=0;
+        double totalScore=0;
+        int scoreCount=0;
+        for(Star star:stars){
+            if(star.getStar()==1){
+                starNumber++;
+            }
+            if(star.getScore()>0){
+                scoreCount++;
+                totalScore+=star.getScore();
+            }
+        }
+        double avgScore;
+        if(scoreCount!=0) {
+            avgScore= totalScore / scoreCount;
+        }else{
+            avgScore=0;
+        }
+        paperInfo.setScore((int)avgScore);
+        paperInfo.setStars(starNumber);
+
+        ArrayList<Comment> comments=(ArrayList<Comment>)commentDao.findCommentsByPaperId(Long.toString(paperId));
+        CommentDto[] commentDtos= new CommentDto[comments.size()];
+        int commentCount=0;
+        for(Comment comment:comments){
+            CommentDto dto=new CommentDto();
+            dto.setContent(comment.getComment());
+            dto.setTime(comment.getTime_stamp());
+            dto.setUserId(comment.getUserId());
+            commentDtos[commentCount]=dto;
+            commentCount++;
+        }
+        paperInfo.setComments(commentDtos);
+        return paperInfo;
+    }
 
 }

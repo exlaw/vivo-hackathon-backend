@@ -59,12 +59,16 @@ public class Paper {
     @Column (name="c_time")
     String c_time="";
 
+    @Column(name="paper_state")
+    int paper_state=0;// 0 讨论中，1已提交
+
     public Paper(String abstractContent, String introduction, String content, String conclusion, Reference[] refs, String writer,String title,String keywords,String acknowledgement, String t) {
         this.abstractContent = abstractContent;
        this.introduction = introduction;
         this.content = content;
         this.conclusion = conclusion;
         this.writer = writer;
+        cooperator.add(writer);//合作者第一项是作者自己
         this.c_time = t;
         this.id= TimeUtil.getTimeStamp() + (int)(Math.random()*100000);
         this.title=title;
@@ -78,6 +82,7 @@ public class Paper {
                 this.refs.add(ref.getPaperId());
             }
         }
+        this.paper_state=0;
     }
 
     public String getId() {
@@ -198,5 +203,13 @@ public class Paper {
 
     public void setC_time(String c_time) {
         this.c_time = c_time;
+    }
+
+    public int getPaper_state() {
+        return paper_state;
+    }
+
+    public void setPaper_state(int paper_state) {
+        this.paper_state = paper_state;
     }
 }
