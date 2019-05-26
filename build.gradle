@@ -96,15 +96,13 @@ task copyJars(type: Copy) {
 }
 
 
-//jacocoTestReport {
-//    group = "Reporting"
-//    reports {
-//        xml.enabled true
-//        csv.enabled false
-//        html.destination "${buildDir}/reports/coverage"
-//    }
-//}
-
-
+jacocoTestReport {
+    group = "Reporting"
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination "${buildDir}/reports/coverage"
+    }
+}
 
 //check.dependsOn jacocoTestReport
