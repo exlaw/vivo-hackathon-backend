@@ -1,15 +1,19 @@
 package vivo.chainpaper.springcontroller;
 
 
+import javafx.print.PaperSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.PaperDao;
+import vivo.chainpaper.dao.StarDao;
 import vivo.chainpaper.dto.Block;
 import vivo.chainpaper.entity.Paper;
+import vivo.chainpaper.entity.Star;
 import vivo.chainpaper.parameters.paper.PaperDraft;
 import vivo.chainpaper.parameters.paper.PaperUploadParams;
+import vivo.chainpaper.parameters.paper.ScoreParameter;
 import vivo.chainpaper.response.Response;
 import vivo.chainpaper.response.paper.PaperUploadResponse;
 import vivo.chainpaper.util.TimeUtil;
@@ -22,11 +26,13 @@ import javax.servlet.http.HttpServletResponse;
 public class PaperController {
     private final PaperBlService paperService;
     private final PaperDao paperDao;
+    private final StarDao starDao;
 
     @Autowired
-    public PaperController(PaperBlService paperBlService,PaperDao paperDao){
+    public PaperController(PaperBlService paperBlService,PaperDao paperDao,StarDao starDao){
         this.paperService=paperBlService;
         this.paperDao=paperDao;
+        this.starDao=starDao;
     }
 
     //增加论文
@@ -66,5 +72,48 @@ public class PaperController {
     }
 
     //查看已经发表的论文列表
+
+    //点赞
+    @RequestMapping(value = "/{paperId}/star", method = RequestMethod.POST,
+            consumes = {"application/json", "application/xml"},
+            produces = {"application/json", "application/xml"})
+    public void
+    uploadPaper(@PathVariable("paperId") long paperId, HttpServletResponse response){
+       boolean isExited=starDao.existsById(UserInfoUtil.getUsername()+Long.toString(paperId));
+        Star star;
+       if(isExited){
+           star=starDao.findById(Long.toString(paperId)).get();
+
+
+       }else{
+            star=new Star(UserInfoUtil.getUsername(),Long.toString(paperId));
+
+       }
+       star.setStar(1);
+       starDao.save(star);
+       response.setStatus(200);
+    }
+
+
+    //打分
+    @RequestMapping(value = "/{paperId}/score", method = RequestMethod.POST,
+            consumes = {"application/json", "application/xml"},
+            produces = {"application/json", "application/xml"})
+    public void
+    uploadPaper(@PathVariable("paperId") long paperId, @RequestBody ScoreParameter params, HttpServletResponse response){
+        String uid=UserInfoUtil.getUsername();
+        boolean isExited=starDao.existsById(uid+Long.toString(paperId));
+        Star star;
+        if(isExited){
+            star=starDao.findById(Long.toString(paperId)).get();
+        }else{
+            star=new Star(uid,Long.toString(paperId));
+        }
+        star.setScore(params.getScore());
+        starDao.save(star);
+        response.setStatus(200);
+    }
+
+
 
 }
