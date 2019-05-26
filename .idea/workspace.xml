@@ -2,96 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8b6021e-9b31-4750-a3db-b7e84a32bb65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/blservice/account/UserBlService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/CORSConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/GsonFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/exception/SystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/exception/UserAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/exception/WrongUsernameOrPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/SuccessResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/WrongResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/WrongResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtUserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/PathUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/UserInfoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/bl/mission/PublicMissionBlServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/bl/mission/WorkerMissionBlServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/data/account/UserDataServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/data/fileservice/FileServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/datacollect/DataCollectorServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/account/RequesterInfoDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/account/UserDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/account/WorkerInfoDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/mission/PublicMissionDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/mission/RequesterMissionDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/mission/WorkerMissionDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/pay/PayDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/topic/TopicDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/dataservice/upload/ImageDataServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/integration/account/UserControllerIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/integration/mission/PublicMissionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/integration/mission/RequesterMissionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/integration/mission/WorkerMissionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/integration/upload/MissionUploadControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/security/jwt/JwtServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/util/ReflectionUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pytest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarSettings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/CodeCover.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/coverage.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/coverage_html.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/jquery.ba-throttle-debounce.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/jquery.hotkeys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/jquery.isonscreen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/jquery.tablesorter.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/keybd_closed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/keybd_open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/model_py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/status.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/covhtml/test_1_py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/CodeCover_py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/coverage_html.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/jquery.ba-throttle-debounce.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/jquery.hotkeys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/jquery.isonscreen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/jquery.tablesorter.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/keybd_closed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/keybd_open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/model_py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/status.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/test_1_py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/htmlcov/test_2_py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/log.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/sonar-project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/test_1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/test_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -122,7 +34,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2584">
+            <state relative-caret-position="190">
               <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
             </state>
           </provider>
@@ -131,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/blservice/account/UserBlService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
+            <state relative-caret-position="1254">
               <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
+            <state relative-caret-position="3192">
               <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="455">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -164,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/upload/UploadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
+            <state relative-caret-position="285">
               <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
             </state>
           </provider>
@@ -402,6 +314,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -465,12 +381,13 @@
       <workItem from="1558832407347" duration="204000" />
       <workItem from="1558834005129" duration="617000" />
       <workItem from="1558834797690" duration="289000" />
-      <workItem from="1558835186145" duration="226000" />
+      <workItem from="1558835186145" duration="635000" />
+      <workItem from="1558837649817" duration="231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1336000" />
+    <option name="totallyTimeSpent" value="1976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="133" y="23" width="1400" height="959" extended-state="0" />
@@ -485,10 +402,9 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Learn" order="7" />
       <window_info id="Web" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.3298731" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298731" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37716264" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -501,6 +417,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -586,6 +503,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/FileTypeUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/blservice/account/UserBlService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3192">
+          <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/upload/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Role.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -614,58 +573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/upload/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2584">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/FileTypeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/blservice/account/UserBlService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="455">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
         </state>
       </provider>
     </entry>

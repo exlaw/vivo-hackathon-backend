@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 5000
 logging:
   level:
     org.springframework:
@@ -13,15 +13,15 @@ jwt:
   header: Authorization
   tokenHead: "Bearer "
 oos:
-  accessKey: "secret"
-  secretKey: "secret"
+  accessKey: "c4582dec5d0809103126"
+  secretKey: "47c783687d4c452c5d71b817b8c481915fb0094a"
   endPoint: "http://oos-bj2.ctyunapi.cn"
-  bucketName: "tagx00"
+  bucketName: "mycourses"
 email:
-  sender: "secret"
+  sender: "18851822162@163.com"
   subject: "ChainPaper账号注册邮箱认证"
   content1: "亲爱的用户： 您好!
-            您正在注册ChainPaper账号注册邮箱认证账号，请在验证码输入框中输入："
+            您正在注册ChainPaper账号，请在验证码输入框中输入："
   content2: "以完成注册。"
 spring:
   jpa:
@@ -34,16 +34,16 @@ spring:
     open-in-view: true
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/tagx00?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false
+    url: jdbc:mysql://localhost:3306/chainpaper?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
-    password: zhanglingzhe0820
+    password: 123456
   aop:
     auto: true
     proxy-target-class: false
   mail:
-    host: smtp.126.com
-    username: secret
-    password: secret
+    host: smtp.163.com
+    username: 18851822162@163.com
+    password: 999959
     properties:
       mail:
         smtp:
@@ -52,20 +52,3 @@ spring:
             enable: true
             required: true
     jndi-name: mail
-  servlet:
-    multipart:
-      enabled: true
-      file-size-threshold: =
-      max-file-size: 1000Mb
-      max-request-size: 1000Mb
-ml:
-  address: http://localhost:8888
-  apiExtractKey: /extractKeyWord
-  apiSeparateSentence: /separateSentence
-  apiGetRecommend: /getRecommendTag
-  apiTrainRecommend: /trainRecommend
-  apiBaidu: /baiduApi
-aliyun:
-  akId: secret
-  akSecret: secret
-  imageHostUrl: https://dtplus-cn-shanghai.data.aliyuncs.com/image/tag
