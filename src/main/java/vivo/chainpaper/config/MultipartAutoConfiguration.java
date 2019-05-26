@@ -24,25 +24,25 @@ import javax.servlet.Servlet;
 @EnableConfigurationProperties(MultipartProperties.class)
 public class MultipartAutoConfiguration {
 
-    private final MultipartProperties multipartProperties;
-
-    public MultipartAutoConfiguration(MultipartProperties multipartProperties) {
-        this.multipartProperties = multipartProperties;
-        multipartProperties.setMaxFileSize("-1");
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public MultipartConfigElement multipartConfigElement() {
-        return this.multipartProperties.createMultipartConfig();
-    }
-
-    @Bean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME)
-    @ConditionalOnMissingBean(MultipartResolver.class)
-    public StandardServletMultipartResolver multipartResolver() {
-        StandardServletMultipartResolver multipartResolver = new StandardServletMultipartResolver();
-        multipartResolver.setResolveLazily(this.multipartProperties.isResolveLazily());
-        return multipartResolver;
-    }
+//    private final MultipartProperties multipartProperties;
+//
+//    public MultipartAutoConfiguration(MultipartProperties multipartProperties) {
+//        this.multipartProperties = multipartProperties;
+//        multipartProperties.setMaxFileSize("-1");
+//    }
+//
+//    @Bean
+//    @ConditionalOnMissingBean
+//    public MultipartConfigElement multipartConfigElement() {
+//        return this.multipartProperties.createMultipartConfig();
+//    }
+//
+//    @Bean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME)
+//    @ConditionalOnMissingBean(MultipartResolver.class)
+//    public StandardServletMultipartResolver multipartResolver() {
+//        StandardServletMultipartResolver multipartResolver = new StandardServletMultipartResolver();
+//        multipartResolver.setResolveLazily(this.multipartProperties.isResolveLazily());
+//        return multipartResolver;
+//    }
 
 }
