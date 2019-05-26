@@ -54,9 +54,10 @@ public class PaperController {
         Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
         paper.setIndexs(block.getBlockIndex());
         paper.setOffsets(block.getBlockOffset());
-        paperService.addPaperToDatabase(paper);
-        response.setStatus(200);
 
+        response.setStatus(200);
+        setRefs(paper,pd);
+        paperService.addPaperToDatabase(paper);
         return new PaperUploadResponse(paper.getId());
     }
 
@@ -74,6 +75,7 @@ public class PaperController {
         paper.setId(paper0.getId());
         paper.setIndexs(block.getBlockIndex());
         paper.setOffsets(block.getBlockOffset());
+        setRefs(paper,pd);
         paperDao.save(paper);
         response.setStatus(200);
         return new PaperUploadResponse(Long.toString(paperId));
@@ -171,9 +173,9 @@ public class PaperController {
         for(int i=0;i<paper.getRefs().size();i++){
             Reference ref;
             if(paper.getReference_type().get(i).equals("published")) {
-                ref = new Reference("published",paper.getRefs().get(i),null);
+                ref = new Reference("published",paper.getRefs().get(i).split("###")[0],null,paper.getRefs().get(i).split("###")[1]);
             }else{
-                 ref = new Reference("chainpaper",null,paper.getRefs().get(i));
+                 ref = new Reference("chainpaper",null,paper.getRefs().get(i).split("###")[0],paper.getRefs().get(i).split("###")[1]);
             }
             references[i]=ref;
         }
@@ -214,6 +216,23 @@ public class PaperController {
         }
         paperInfo.setComments(commentDtos);
         return paperInfo;
+    }
+
+    private Paper setRefs(Paper paper,PaperDraft pd){
+        ArrayList<String> ref_strs=new ArrayList<>();
+        ArrayList<String> type=new ArrayList<>();
+        for(Reference ref:pd.getReference()){
+            String ref_type=ref.getType();
+            if(ref_type.equals("published")){
+                ref_strs.add(ref.getDoi()+"###"+ref.getContext());
+            }else{
+                ref_strs.add(ref.getPaperId()+"###"+ref.getContext());
+            }
+            type.add(ref_type);
+        }
+        paper.setRefs(ref_strs);
+        paper.setReference_type(type);
+        return paper;
     }
 
 }
