@@ -51,6 +51,10 @@ dependencies {
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    testRuntime module('net.sourceforge.cobertura:cobertura:1.9.4') {
+        dependencies "asm:asm:3.1", "oro:oro:2.0.8", "asm:asm-tree:3.0"
+    }
 }
 
 jar {
