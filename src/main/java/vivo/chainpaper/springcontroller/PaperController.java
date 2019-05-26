@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
+import vivo.chainpaper.dao.CommentDao;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dao.StarDao;
 import vivo.chainpaper.dto.Block;
+import vivo.chainpaper.entity.Comment;
 import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.Star;
+import vivo.chainpaper.entity.account.User;
+import vivo.chainpaper.parameters.paper.CommentParameter;
 import vivo.chainpaper.parameters.paper.PaperDraft;
 import vivo.chainpaper.parameters.paper.PaperUploadParams;
 import vivo.chainpaper.parameters.paper.ScoreParameter;
@@ -27,12 +31,14 @@ public class PaperController {
     private final PaperBlService paperService;
     private final PaperDao paperDao;
     private final StarDao starDao;
+    private final CommentDao commentDao;
 
     @Autowired
-    public PaperController(PaperBlService paperBlService,PaperDao paperDao,StarDao starDao){
+    public PaperController(PaperBlService paperBlService,PaperDao paperDao,StarDao starDao,CommentDao commentDao){
         this.paperService=paperBlService;
         this.paperDao=paperDao;
         this.starDao=starDao;
+        this.commentDao=commentDao;
     }
 
     //增加论文
@@ -78,7 +84,7 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public void
-    uploadPaper(@PathVariable("paperId") long paperId, HttpServletResponse response){
+    uploadStar(@PathVariable("paperId") long paperId, HttpServletResponse response){
        boolean isExited=starDao.existsById(UserInfoUtil.getUsername()+Long.toString(paperId));
         Star star;
        if(isExited){
@@ -100,7 +106,7 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public void
-    uploadPaper(@PathVariable("paperId") long paperId, @RequestBody ScoreParameter params, HttpServletResponse response){
+    uploadStar(@PathVariable("paperId") long paperId, @RequestBody ScoreParameter params, HttpServletResponse response){
         String uid=UserInfoUtil.getUsername();
         boolean isExited=starDao.existsById(uid+Long.toString(paperId));
         Star star;
@@ -114,6 +120,16 @@ public class PaperController {
         response.setStatus(200);
     }
 
+    //评论
+    @RequestMapping(value = "/{paperId}/comment", method = RequestMethod.POST,
+            consumes = {"application/json", "application/xml"},
+            produces = {"application/json", "application/xml"})
+    public void
+    uploadComment(@PathVariable("paperId") long paperId, @RequestBody CommentParameter params, HttpServletResponse response){
+        Comment comment=new Comment(UserInfoUtil.getUsername(),Long.toString(paperId),params.getComment());
+        commentDao.save(comment);
+        response.setStatus(200);
+    }
 
 
 }
