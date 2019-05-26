@@ -1,6 +1,7 @@
 package vivo.chainpaper.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import vivo.chainpaper.util.TimeUtil;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class Paper {
     String index="";
     @Column (name="offset")
     String offset="";
+    @Column (name="time")
+    String time="";
+
 
 
     public Paper(String abstractContent, String introduction, String content, String conclusion, ArrayList<String> references,
@@ -49,6 +53,7 @@ public class Paper {
         this.cooperator = cooperator;
         this.index = index;
         this.offset = offset;
+        this.time= TimeUtil.getTimeStamp();
     }
 
     public String getId() {

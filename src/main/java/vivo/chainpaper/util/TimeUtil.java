@@ -1,9 +1,11 @@
 package vivo.chainpaper.util;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class TimeUtil {
@@ -25,5 +27,11 @@ public class TimeUtil {
             times.add(Timestamp.valueOf(monthStart).getTime());
         }
         return times;
+    }
+
+    public static String getTimeStamp(){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+        return  date;
     }
 }

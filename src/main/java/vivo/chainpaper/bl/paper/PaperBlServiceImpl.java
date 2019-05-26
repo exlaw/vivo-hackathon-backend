@@ -1,4 +1,7 @@
 package vivo.chainpaper.bl.paper;
 
-public class PaperBlServiceImpl {
+import vivo.chainpaper.blservice.paper.PaperBlService;
+
+public class PaperBlServiceImpl implements PaperBlService {
+
 }
