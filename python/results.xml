@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="0" name="pytest" skipped="0" tests="3" time="0.036"><testcase classname="test_2" file="test_2.py" line="19" name="test_1" time="0.001"><system-out>setup_function called.
-Test_1 called.
-teardown_function called.
-</system-out></testcase><testcase classname="test_2" file="test_2.py" line="23" name="test_2" time="0.001"><system-out>setup_module called.
-Test_2 called.
-</system-out></testcase><testcase classname="test_2" file="test_2.py" line="27" name="test_3" time="0.001"><system-out>Test_3 called.
-teardown_module called.
-</system-out></testcase></testsuite>
