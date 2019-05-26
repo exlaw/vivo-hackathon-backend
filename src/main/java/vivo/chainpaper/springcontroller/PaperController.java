@@ -73,6 +73,7 @@ public class PaperController {
             produces = {"application/json", "application/xml"})
     public @ResponseBody PaperUploadResponse updateDemo(@PathVariable("paperId") String paperId, @RequestBody PaperUploadParams params){
 //        System.out.println(new Gson());
+        Paper origin = this.paperDao.getOne(paperId);
         PaperDraft pd=params.getPaperDraft();
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
 //        Paper paper0=paperDao.findById(Long.toString(paperId)).get();
@@ -81,7 +82,8 @@ public class PaperController {
 //        paper.setIndexs(block.getBlockIndex());
 //        paper.setOffsets(block.getBlockOffset());
         paper.setId(paperId);
-        paper=setRefs(paper,pd);
+        paper = setRefs(paper, pd);
+        paper.setCooperator(origin.getCooperator());
         paperDao.save(paper);
         return new PaperUploadResponse(paperId);
     }
