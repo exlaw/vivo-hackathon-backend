@@ -16,6 +16,7 @@ buildscript {
 
 }
 
+apply plugin: "jacoco"
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -50,8 +51,17 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-spi', version: '2.4.0'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile group: 'org.springframework.restdocs', name: 'spring-restdocs-mockmvc', version: '2.0.2.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+//task jacocoTestReport {
+//    reports {
+//        xml.enabled true
+//        html.enabled true
+//    }
+//}
+
 
 jar {
     manifest {
@@ -85,3 +95,15 @@ task copyJars(type: Copy) {
     from configurations.runtime
     into 'dist' // 目标位置
 }
+
+
+//jacocoTestReport {
+//    group = "Reporting"
+//    reports {
+//        xml.enabled true
+//        csv.enabled false
+//        html.destination "${buildDir}/reports/coverage"
+//    }
+//}
+
+//check.dependsOn jacocoTestReport

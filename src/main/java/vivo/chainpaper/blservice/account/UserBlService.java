@@ -6,7 +6,6 @@ import vivo.chainpaper.parameters.user.UserInfoParams;
 import vivo.chainpaper.response.SuccessResponse;
 import org.springframework.stereotype.Service;
 import vivo.chainpaper.exception.*;
-import vivo.chainpaper.response.user.EmailValidationRequestResponse;
 import vivo.chainpaper.response.user.LoginResponse;
 import vivo.chainpaper.response.user.RegisterResponse;
 import vivo.chainpaper.response.user.UserInfoResponse;
@@ -35,16 +34,6 @@ public interface UserBlService {
      * @param username
      */
     void logoff(String username) throws UsernameDoesNotFoundException;
-
-    /**
-     * request email validation
-     *
-     * @param username
-     * @return
-     * @throws UsernameDoesNotFoundException
-     * @throws InvalidEmailAddressesException
-     */
-    EmailValidationRequestResponse requestEmailValidation(String username) throws UsernameDoesNotFoundException, InvalidEmailAddressesException;
 
     /**
      * validate email

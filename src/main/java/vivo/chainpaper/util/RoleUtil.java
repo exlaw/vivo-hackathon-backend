@@ -8,7 +8,11 @@ import java.util.Map;
 import static vivo.chainpaper.entity.Role.*;
 
 public class RoleUtil {
-    public static Map<String, Role> ROLE_TABLE = new HashMap<>();
+    private RoleUtil(){
+
+    }
+
+    private static final Map<String, Role> ROLE_TABLE = new HashMap<>();
 
     static {
         ROLE_TABLE.put(USER_NAME, Role.USER);

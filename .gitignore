@@ -14,6 +14,7 @@
 **/.idea/**/sqlDataSources.xml
 **/.idea/**/dynamic.xml
 **/.idea/**/uiDesigner.xml
+**/.idea/**/workspace.xml
 
 # Gradle:
 **/.idea/**/gradle.xml
@@ -29,6 +30,8 @@
 
 # mpeltonen/sbt-idea plugin
 **/.idea_modules/
+
+**/dist/
 
 # JIRA plugin
 **/atlassian-ide-plugin.xml

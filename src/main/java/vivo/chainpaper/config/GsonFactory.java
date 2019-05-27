@@ -6,6 +6,9 @@ import vivo.chainpaper.config.jsonAdapter.SpringfoxJsonToGsonAdapter;
 import springfox.documentation.spring.web.json.Json;
 
 public class GsonFactory {
+    private GsonFactory(){
+
+    }
     public static Gson get() {
         return new GsonBuilder()
                 .registerTypeAdapter(Json.class, new SpringfoxJsonToGsonAdapter())

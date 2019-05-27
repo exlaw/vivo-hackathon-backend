@@ -31,9 +31,6 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
     private JwtService jwtService;
 
-    @Autowired
-    public JwtAuthenticationTokenFilter() {
-    }
 
     @Override
     protected void doFilterInternal(

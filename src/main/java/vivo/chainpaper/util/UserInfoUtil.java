@@ -1,9 +1,13 @@
 package vivo.chainpaper.util;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-
 public class UserInfoUtil {
+
+    private UserInfoUtil(){
+
+    }
+
+    public static NameUtil nameUtil = new RealNameUtil();
     public static String getUsername() {
-        return SecurityContextHolder.getContext().getAuthentication().getName();
+        return nameUtil.getName();
     }
 }
