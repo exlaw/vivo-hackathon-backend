@@ -23,13 +23,13 @@ public class TestUtil {
                 }
             }
         } catch (IllegalAccessException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (IllegalArgumentException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (InvocationTargetException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (IntrospectionException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
