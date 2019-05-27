@@ -1,9 +1,9 @@
 package vivo.chainpaper.security.jwt;
 
 import net.sf.json.JSONObject;
-import vivo.chainpaper.entity.Role;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.core.GrantedAuthority;
+import vivo.chainpaper.entity.Role;
 
 public class JwtRole implements GrantedAuthority {
 

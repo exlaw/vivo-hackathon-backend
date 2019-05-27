@@ -1,7 +1,5 @@
 package vivo.chainpaper.response;
 
-import java.util.List;
-
 public class PaperRefResponse extends Response{
 
     private PaperRef refs;

@@ -1,6 +1,5 @@
 package vivo.chainpaper.entity.account;
 
-import vivo.chainpaper.entity.Role;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;

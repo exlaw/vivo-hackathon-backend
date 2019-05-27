@@ -3,11 +3,11 @@ package vivo.chainpaper.security.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import vivo.chainpaper.entity.account.User;
-import vivo.chainpaper.entity.Role;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import vivo.chainpaper.entity.Role;
+import vivo.chainpaper.entity.account.User;
 
 import java.util.*;
 import java.util.stream.Collectors;
