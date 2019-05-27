@@ -10,6 +10,7 @@ import vivo.chainpaper.MainApplication;
 import vivo.chainpaper.dao.CollabrationDao;
 import vivo.chainpaper.entity.Collabration;
 import vivo.chainpaper.entity.Paper;
+import vivo.chainpaper.parameters.Collabrate.CollabrateInvitationParam;
 import vivo.chainpaper.parameters.Collabrate.CollabrateResultParam;
 import vivo.chainpaper.util.MockNameutil;
 import vivo.chainpaper.util.UserInfoUtil;
@@ -42,7 +43,7 @@ public class CollabrateControllerTest {
         List<Collabration>  collabrations = collabrationDao.findAll();
         if(collabrations.size() > 0){
             String ID = collabrations.get(0).getCollabrationID();
-            collabrateController.invitation(new CollabrateResultParam(collabrations.get(0).getPaperId()));
+            collabrateController.invitation(new CollabrateInvitationParam(collabrations.get(0).getPaperId(), "law"));
             collabrateController.request(new CollabrateResultParam(collabrations.get(0).getPaperId()));
             collabrateController.invitationList(collabrations.get(0).getCollabrationID());
             collabrateController.acceptList(collabrations.get(0).getCollabrationID());

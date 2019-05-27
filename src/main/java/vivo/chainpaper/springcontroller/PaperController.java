@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.CommentDao;
@@ -17,18 +18,12 @@ import vivo.chainpaper.entity.Comment;
 import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.Star;
 import vivo.chainpaper.parameters.paper.*;
-import vivo.chainpaper.response.CommentResponse;
-import vivo.chainpaper.response.Response;
-import vivo.chainpaper.response.ScoreResponse;
-import vivo.chainpaper.response.StarResponse;
+import vivo.chainpaper.response.*;
 import vivo.chainpaper.response.paper.ListPaperGetResponse;
 import vivo.chainpaper.response.paper.PaperUploadResponse;
 import vivo.chainpaper.response.paper.SinglePaperGetResponse;
 import vivo.chainpaper.util.TimeUtil;
 import vivo.chainpaper.util.UserInfoUtil;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +60,64 @@ public class PaperController {
         paperService.addPaperToDatabase(paper);
         return new PaperUploadResponse(paper.getId());
     }
+
+    /**
+     * 21.	递归获得某一文章的引用
+     * GET /papers/{paperId}/refs
+     *
+     * type PaperRef={
+     * type: "published" | "chainpaper",
+     * doi: string;
+     * paperId: string;
+     * title: string;
+     * refSs:PaperRef[];
+     * }
+     *
+     * 200: {
+     * refs:PaperRef[]
+     * }
+     * @param paperId
+     * @return
+     */
+
+    @ResponseBody
+    @RequestMapping(value = "/{paperId}/refs", method = RequestMethod.GET,
+            consumes = {"*/*"},
+            produces = {"application/json", "application/xml"})
+    public ResponseEntity<Response>
+    getRefs(@PathVariable("paperId") String paperId){
+        Paper paper1 = this.paperDao.getOne(paperId);
+        paper1.setTitle(paper1.getTitle());
+        PaperRef paperRef = new PaperRef("chainpaper");
+        paperRef.setPaperId(paperId);
+        paperRef.setTitle(paper1.getTitle());
+        paperRef.setRefs(this.getRefsByID(paperId));
+        return new ResponseEntity<>(new PaperRefResponse(paperRef), HttpStatus.OK);
+    }
+
+    public List<PaperRef> getRefsByID(String paperId){
+        List<PaperRef> refs = new ArrayList<>();
+        Paper paper = this.paperDao.getOne(paperId);
+        for(int i = 0; i < paper.getRefs().size() ;  i++){
+            String Id = paper.getRefs().get(i).split("###")[0];
+            PaperRef paperRef = new PaperRef(paper.getReference_type().get(i));
+            if(paper.getReference_type().get(i).equals("published")){
+                paperRef.setDoi(Id);
+                paperRef.setRefs(new ArrayList<>());
+            }else{
+                paperRef.setPaperId(Id);
+                Paper paper1 = this.paperDao.getOne(Id);
+                paperRef.setTitle(paper1.getTitle());
+                paperRef.setRefs(this.getRefsByID(Id));
+            }
+            refs.add(paperRef);
+        }
+        return refs;
+
+    }
+
+
+
 
     //修改论文
     @RequestMapping(value = "/{paperId}",
