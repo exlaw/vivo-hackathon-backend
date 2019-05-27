@@ -8,12 +8,15 @@ import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 import vivo.chainpaper.dto.Block;
 
+
 public class BlockUtil {
     private BlockUtil(){
 
     }
     private static final String masterIp ="http://36.103.228.127:8000";
+
     public static Block sendDataToChainStore(String data){
+        data=data.replace('"','$');
         String data_json="{ \"info\" : \""+data+"\" }"; // change data to json
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
