@@ -9,6 +9,7 @@ import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.CommentDao;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dao.StarDao;
+import vivo.chainpaper.dto.Block;
 import vivo.chainpaper.dto.CommentDto;
 import vivo.chainpaper.dto.PaperInfo;
 import vivo.chainpaper.entity.Comment;
@@ -50,9 +51,9 @@ public class PaperController {
     uploadPaper(@RequestBody PaperUploadParams params){
         PaperDraft pd=params.getPaperDraft();
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
-//        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
-//        paper.setIndexs(block.getBlockIndex());
-//        paper.setOffsets(block.getBlockOffset());
+        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
+        paper.setIndexs(block.getBlockIndex());
+        paper.setOffsets(block.getBlockOffset());
         setRefs(paper,pd);
         paperService.addPaperToDatabase(paper);
         return new PaperUploadResponse(paper.getId());
@@ -127,11 +128,9 @@ public class PaperController {
         Paper origin = this.paperDao.getOne(paperId);
         PaperDraft pd=params.getPaperDraft();
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
-//        Paper paper0=paperDao.findById(Long.toString(paperId)).get();
-//        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
-//        paper.setId(paper0.getId());
-//        paper.setIndexs(block.getBlockIndex());
-//        paper.setOffsets(block.getBlockOffset());
+        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
+        paper.setIndexs(block.getBlockIndex());
+        paper.setOffsets(block.getBlockOffset());
         paper.setId(paperId);
         Paper paper1 = setRefs(paper, pd);
         paper1.setCooperator(origin.getCooperator());

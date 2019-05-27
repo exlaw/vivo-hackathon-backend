@@ -12,7 +12,7 @@ public class BlockUtil {
     private BlockUtil(){
 
     }
-    private static final String masterIp ="http://localhost:8002";
+    private static final String masterIp ="http://36.103.228.127:8000";
     public static Block sendDataToChainStore(String data){
         String data_json="{ \"info\" : \""+data+"\" }"; // change data to json
         RestTemplate restTemplate = new RestTemplate();
