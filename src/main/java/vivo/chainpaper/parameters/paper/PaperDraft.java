@@ -84,4 +84,12 @@ public class PaperDraft {
     public void setAcknowledgement(String acknowledgement) {
         this.acknowledgement = acknowledgement;
     }
+
+    public Reference[] getRefs() {
+        return refs;
+    }
+
+    public void setRefs(Reference[] refs) {
+        this.refs = refs;
+    }
 }
