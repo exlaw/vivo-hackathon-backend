@@ -1,5 +1,6 @@
 package vivo.chainpaper.response;
 
+
 public class InfoInvitationResponce extends Response {
     /**
      * time: string;

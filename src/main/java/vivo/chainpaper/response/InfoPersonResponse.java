@@ -99,4 +99,12 @@ public class InfoPersonResponse extends Response {
     public void setPaperIdsInCollabration(List<String> paperIdsInCollabration) {
         this.paperIdsInCollabration = paperIdsInCollabration;
     }
+
+    public List<String> getPaperIds() {
+        return paperIds;
+    }
+
+    public void setPaperIds(List<String> paperIds) {
+        this.paperIds = paperIds;
+    }
 }

@@ -61,4 +61,12 @@ public class InfoRequestResponce extends Response{
     public void setCollabrationInvitationId(String collabrationInvitationId) {
         this.collabrationRequestId = collabrationInvitationId;
     }
+
+    public String getCollabrationRequestId() {
+        return collabrationRequestId;
+    }
+
+    public void setCollabrationRequestId(String collabrationRequestId) {
+        this.collabrationRequestId = collabrationRequestId;
+    }
 }
