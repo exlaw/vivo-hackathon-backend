@@ -22,13 +22,13 @@ public class BlockUtil {
         headers.setContentType(type);
         headers.add("Accept", MediaType.APPLICATION_JSON.toString());
 
-        HttpEntity<String> formEntity = new HttpEntity<String>(data_json, headers);
+        HttpEntity<String> formEntity = new HttpEntity<>(data_json, headers);
 
         String result = restTemplate.postForObject(masterIp+"/saveInfo", formEntity, String.class);
         JSONObject jsonObject= JSONObject.fromObject(result);
         long blockIndex=jsonObject.getLong("blockIndex");
         long offset=jsonObject.getLong("blockOffset");
-        Block block=new Block(blockIndex,offset);
-        return block;
+        return new Block(blockIndex,offset);
+
     }
 }
