@@ -12,7 +12,7 @@ public class CommentResponse extends Response {
     public CommentResponse(List<Comment> comments) {
         this.comments = new ArrayList<>();
         for(Comment comment: comments){
-            this.comments.add(new CommentItem(comment.getUserId(), comment.getTime_stamp(), comment.getComment()));
+            this.comments.add(new CommentItem(comment.getUserId(), comment.getTimeStamp(), comment.getComment()));
         }
     }
 

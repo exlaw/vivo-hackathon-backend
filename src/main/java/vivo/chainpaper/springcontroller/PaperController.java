@@ -99,8 +99,8 @@ public class PaperController {
         Paper paper = this.paperDao.getOne(paperId);
         for(int i = 0; i < paper.getRefs().size() ;  i++){
             String pID = paper.getRefs().get(i).split("###")[0];
-            PaperRef paperRef = new PaperRef(paper.getReference_type().get(i));
-            if(paper.getReference_type().get(i).equals(this.published)){
+            PaperRef paperRef = new PaperRef(paper.getReferenceType().get(i));
+            if(paper.getReferenceType().get(i).equals(this.published)){
                 paperRef.setDoi(pID);
                 paperRef.setRefs(new ArrayList<>());
             }else{
@@ -300,8 +300,8 @@ public class PaperController {
         PaperInfo paperInfo=new PaperInfo();
         paperInfo.setAuthors(authors);
         paperInfo.setPaperId(paperId);
-        paperInfo.setUploadTime(paper.getC_time());
-        paperInfo.setState(paper.getPaper_state());
+        paperInfo.setUploadTime(paper.getcTime());
+        paperInfo.setState(paper.getPaperState());
         Reference[] references=new Reference[paper.getRefs().size()];
         for(int i=0;i<paper.getRefs().size();i++){
             Reference ref;
@@ -314,7 +314,7 @@ public class PaperController {
             }else if(infos.length==1){
                 info1=infos[0];
             }
-            if(paper.getReference_type().get(i).equals(this.published)) {
+            if(paper.getReferenceType().get(i).equals(this.published)) {
                 ref = new Reference(this.published ,info1,null,info2);
             }else{
                  ref = new Reference("chainpaper",null,info1,info2);
@@ -351,7 +351,7 @@ public class PaperController {
         for(Comment comment:comments){
             CommentDto dto=new CommentDto();
             dto.setContent(comment.getComment());
-            dto.setTime(comment.getTime_stamp());
+            dto.setTime(comment.getTimeStamp());
             dto.setUserId(comment.getUserId());
             commentDtos[commentCount]=dto;
             commentCount++;
@@ -373,7 +373,7 @@ public class PaperController {
             type.add(refType);
         }
         paper.setRefs(refStrs);
-        paper.setReference_type(type);
+        paper.setReferenceType(type);
         return paper;
     }
 
