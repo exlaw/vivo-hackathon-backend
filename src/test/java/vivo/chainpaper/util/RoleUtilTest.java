@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MainApplication.class)
 public class RoleUtilTest {
-    RoleUtil roleUtil=new RoleUtil();
     @Test
     public void Test(){}
 }

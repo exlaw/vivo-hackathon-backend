@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bb0c708-6661-4f53-bfde-8e18b26857a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/paper/PaperBlServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/paper/PaperBlServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/GlobalCorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/GsonFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/GsonFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/MultipartAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/MultipartAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/StarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/StarDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/BlockUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/BlockUtil.java" afterDir="false" />
-    </list>
+    <list default="true" id="5bb0c708-6661-4f53-bfde-8e18b26857a9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -132,19 +121,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/PaperDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#42#1" expanded="true" />
-                <element signature="e#0#42#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/StarDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -195,11 +171,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1676">
-              <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+            <state relative-caret-position="-370">
+              <caret line="291" column="22" selection-start-line="291" selection-start-column="22" selection-end-line="291" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/BlockUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -258,6 +246,7 @@
       <find>http</find>
       <find>cors</find>
       <find>sudo</find>
+      <find>published</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -507,6 +496,15 @@
               <item name="springcontroller" type="462c0819:PsiDirectoryNode" />
               <item name="account" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -558,7 +556,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainApplication">
+  <component name="RunManager" selected="JUnit.All in Vivo.Backend.test (1)">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vivo.chainpaper.MainApplication" />
       <module name="Vivo.Backend.main" />
@@ -572,24 +570,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vivo-hackathon-backend [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration name="All in Vivo.Backend.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vivo.Backend.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="All in Vivo.Backend.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Vivo.Backend.test" />
@@ -627,11 +614,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Vivo.Backend.test (1)" />
         <item itemvalue="Application.MainApplication" />
         <item itemvalue="JUnit.All in Vivo.Backend.test" />
         <item itemvalue="JUnit.DemoTest" />
         <item itemvalue="JUnit.DemoTest.test" />
-        <item itemvalue="Gradle.vivo-hackathon-backend [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -645,7 +632,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558845037501</updated>
-      <workItem from="1558845044311" duration="47127000" />
+      <workItem from="1558845044311" duration="47861000" />
     </task>
     <servers />
   </component>
@@ -682,7 +669,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51646000" />
+    <option name="totallyTimeSpent" value="52380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -738,6 +725,7 @@
     <SUITE FILE_PATH="coverage/Vivo_Backend$DemoTest.ic" NAME="DemoTest Coverage Results" MODIFIED="1558897658394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Vivo_Backend$DemoTest_test.ic" NAME="DemoTest.test Coverage Results" MODIFIED="1558893739945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Vivo_Backend$All_in_Vivo_Backend_test.ic" NAME="All in Vivo.Backend.test Coverage Results" MODIFIED="1558916013960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Vivo_Backend$All_in_Vivo_Backend_test__1_.ic" NAME="All in Vivo.Backend.test (1) Coverage Results" MODIFIED="1558924074257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/response/InfoPersonResponseTest.java">
@@ -936,17 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/BlockUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#916#924#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy/run.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1139,8 +1116,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1676">
-          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+        <state relative-caret-position="-370">
+          <caret line="291" column="22" selection-start-line="291" selection-start-column="22" selection-end-line="291" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/BlockUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
