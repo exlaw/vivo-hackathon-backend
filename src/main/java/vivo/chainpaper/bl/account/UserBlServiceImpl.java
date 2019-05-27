@@ -1,8 +1,14 @@
 package vivo.chainpaper.bl.account;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 import vivo.chainpaper.dao.account.UserDao;
 import vivo.chainpaper.entity.account.User;
-import vivo.chainpaper.exception.*;
+import vivo.chainpaper.exception.UserAlreadyExistsException;
+import vivo.chainpaper.exception.UsernameDoesNotFoundException;
+import vivo.chainpaper.exception.WrongUsernameOrPasswordException;
 import vivo.chainpaper.parameters.user.RegisterParams;
 import vivo.chainpaper.response.user.LoginResponse;
 import vivo.chainpaper.response.user.RegisterResponse;
@@ -10,10 +16,6 @@ import vivo.chainpaper.security.jwt.JwtService;
 import vivo.chainpaper.security.jwt.JwtUser;
 import vivo.chainpaper.security.jwt.JwtUserDetailsService;
 import vivo.chainpaper.util.RandomUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
 
 @Service
 public class UserBlServiceImpl {

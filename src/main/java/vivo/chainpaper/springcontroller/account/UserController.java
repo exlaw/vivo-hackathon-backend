@@ -1,23 +1,25 @@
 package vivo.chainpaper.springcontroller.account;
 
 import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.bl.account.UserBlServiceImpl;
 import vivo.chainpaper.dao.CollabrationDao;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dao.account.UserDao;
 import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.entity.account.User;
-import vivo.chainpaper.exception.*;
+import vivo.chainpaper.exception.UserAlreadyExistsException;
+import vivo.chainpaper.exception.UsernameDoesNotFoundException;
+import vivo.chainpaper.exception.WrongUsernameOrPasswordException;
 import vivo.chainpaper.parameters.user.RegisterParams;
 import vivo.chainpaper.response.InfoPersonResponse;
 import vivo.chainpaper.response.Response;
 import vivo.chainpaper.response.WrongResponseEntity;
 import vivo.chainpaper.response.user.LoginResponse;
 import vivo.chainpaper.response.user.RegisterResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;

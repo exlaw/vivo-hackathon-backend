@@ -1,6 +1,5 @@
 package vivo.chainpaper.springcontroller;
 
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +13,7 @@ import vivo.chainpaper.parameters.Collabrate.CollabrateResultParam;
 import vivo.chainpaper.response.*;
 import vivo.chainpaper.util.TimeUtil;
 import vivo.chainpaper.util.UserInfoUtil;
+
 import java.util.List;
 import java.util.Random;
 

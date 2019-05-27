@@ -1,7 +1,5 @@
 package vivo.chainpaper.response;
 
-import io.swagger.models.auth.In;
-
 public class ScoreResponse extends Response {
     private Integer score;
     private Integer myScore;

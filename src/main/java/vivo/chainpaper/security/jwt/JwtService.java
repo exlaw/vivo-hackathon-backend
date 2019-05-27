@@ -1,8 +1,8 @@
 package vivo.chainpaper.security.jwt;
 
 import io.jsonwebtoken.Claims;
-import vivo.chainpaper.entity.account.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import vivo.chainpaper.entity.account.User;
 
 import java.util.Date;
 

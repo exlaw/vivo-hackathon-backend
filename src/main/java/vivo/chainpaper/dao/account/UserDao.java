@@ -1,9 +1,9 @@
 package vivo.chainpaper.dao.account;
 
-import vivo.chainpaper.entity.Role;
-import vivo.chainpaper.entity.account.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import vivo.chainpaper.entity.Role;
+import vivo.chainpaper.entity.account.User;
 
 import java.util.List;
 
