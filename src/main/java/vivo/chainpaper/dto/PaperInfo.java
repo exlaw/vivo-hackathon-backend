@@ -1,9 +1,7 @@
 package vivo.chainpaper.dto;
 
-import vivo.chainpaper.entity.Paper;
 import vivo.chainpaper.parameters.paper.PaperDraft;
 
-import java.util.ArrayList;
 
 public class PaperInfo {
     String paperId;
@@ -15,8 +13,9 @@ public class PaperInfo {
     CommentDto[] comments;
     int state;
 
-    public PaperInfo() {
 
+    public PaperInfo() {
+        state = 0;
     }
 
     public String getPaperId() {

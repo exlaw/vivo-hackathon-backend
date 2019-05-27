@@ -1,6 +1,5 @@
 package vivo.chainpaper.entity;
 
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -30,7 +30,7 @@ public class Paper {
 //    @Column(name="reference_type")
     @ElementCollection
     @CollectionTable(name = "reference_type")
-    List<String> reference_type=new ArrayList<>();
+    List<String> referenceType=new ArrayList<>();
 //
     @Column(name = "writer")
     String writer;
@@ -56,10 +56,10 @@ public class Paper {
     long offsets=0;
 
     @Column (name="c_time")
-    String c_time="";
+    String cTime="";
 
     @Column(name="paper_state")
-    int paper_state=0;// 0 讨论中，1已提交
+    int paperState=0;// 0 讨论中，1已提交
 
     public Paper() {
     }
@@ -71,20 +71,20 @@ public class Paper {
         this.conclusion = conclusion;
         this.writer = writer;
         cooperator.add(writer);//合作者第一项是作者自己
-        this.c_time = t;
+        this.cTime = t;
         this.id= Long.toString(System.currentTimeMillis())+ new Random().nextInt(100000);
         this.title=title;
         this.keywords=keywords;
         this.acknowledgement=acknowledgement;
         for(Reference ref:refs){
-            this.reference_type.add(ref.getType());
+            this.referenceType.add(ref.getType());
             if(ref.getType()=="published"){
                 this.refs.add(ref.getDoi());
             }else{
                 this.refs.add(ref.getPaperId());
             }
         }
-        this.paper_state=0;
+        this.paperState=0;
     }
 
     public String getId() {
@@ -135,12 +135,12 @@ public class Paper {
         this.refs = refs;
     }
 
-    public List<String> getReference_type() {
-        return reference_type;
+    public List<String> getReferenceType() {
+        return referenceType;
     }
 
-    public void setReference_type(List<String> reference_type) {
-        this.reference_type = reference_type;
+    public void setReferenceType(List<String> referenceType) {
+        this.referenceType = referenceType;
     }
 
     public String getWriter() {
@@ -199,19 +199,19 @@ public class Paper {
         this.offsets = offsets;
     }
 
-    public String getC_time() {
-        return c_time;
+    public String getcTime() {
+        return cTime;
     }
 
-    public void setC_time(String c_time) {
-        this.c_time = c_time;
+    public void setcTime(String cTime) {
+        this.cTime = cTime;
     }
 
-    public int getPaper_state() {
-        return paper_state;
+    public int getPaperState() {
+        return paperState;
     }
 
-    public void setPaper_state(int paper_state) {
-        this.paper_state = paper_state;
+    public void setPaperState(int paperState) {
+        this.paperState = paperState;
     }
 }

@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Time;
 
 
 @Entity
@@ -23,7 +22,7 @@ public class Comment {
     String paperId;
 
     @Column(name="time_stamp")
-    String time_stamp;
+    String timeStamp;
 
     @Column(name ="comment")
     String comment;
@@ -32,10 +31,10 @@ public class Comment {
     }
 
     public Comment(String userId, String paperId, String comment) {
-        this.time_stamp= TimeUtil.getTimeStamp();
+        this.timeStamp= TimeUtil.getTimeStamp();
         this.userId = userId;
         this.paperId = paperId;
-        this.id = time_stamp +userId+paperId;
+        this.id = timeStamp +userId+paperId;
         this.comment = comment;
     }
 
@@ -63,12 +62,12 @@ public class Comment {
         this.paperId = paperId;
     }
 
-    public String getTime_stamp() {
-        return time_stamp;
+    public String getTimeStamp() {
+        return timeStamp;
     }
 
-    public void setTime_stamp(String time_stamp) {
-        this.time_stamp = time_stamp;
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     public String getComment() {
