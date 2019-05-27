@@ -9,6 +9,7 @@ import vivo.chainpaper.dao.CollabrationDao;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.entity.Collabration;
 import vivo.chainpaper.entity.Paper;
+import vivo.chainpaper.parameters.Collabrate.CollabrateInvitationParam;
 import vivo.chainpaper.parameters.Collabrate.CollabrateResultParam;
 import vivo.chainpaper.response.*;
 import vivo.chainpaper.util.TimeUtil;
@@ -99,11 +100,10 @@ public class CollabrateController {
     @RequestMapping(value = "invitation", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<Response> invitation(
-            @RequestBody CollabrateResultParam resultParam
+            @RequestBody CollabrateInvitationParam resultParam
     )  {
-        System.out.println(resultParam.getPaperId());
         Collabration collabration = new  Collabration(Long.toString(System.currentTimeMillis())+ new Random().nextInt(100000),
-                UserInfoUtil.getUsername(), this.paperDao.findUsernameByPaperId(resultParam.getPaperId()),  TimeUtil.getTimeStamp(), resultParam.getPaperId(),  "invitation", false);
+                UserInfoUtil.getUsername(), resultParam.getInviteeId() ,  TimeUtil.getTimeStamp(), resultParam.getPaperId(),  "invitation", false);
         this.collabrationDao.save(collabration);
         InvitationResponse invitationResponse = new InvitationResponse(collabration.getCollabrationID());
         return new ResponseEntity<>(invitationResponse, HttpStatus.OK);
