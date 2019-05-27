@@ -7,10 +7,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 import vivo.chainpaper.dto.Block;
-import vivo.chainpaper.exception.SystemException;
 
 public class BlockUtil {
-    private static final String masterIp="http://localhost:8002";
+    private BlockUtil(){
+
+    }
+    private static final String masterIp ="http://localhost:8002";
     public static Block sendDataToChainStore(String data){
         String data_json="{ \"info\" : \""+data+"\" }"; // change data to json
         RestTemplate restTemplate = new RestTemplate();

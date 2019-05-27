@@ -26,9 +26,8 @@ public class PaperBlServiceImpl implements PaperBlService {
     public Block addPaperToChainStore(PaperDraft paperDraft, String writer) {
         PaperBlock paperBlock=new PaperBlock(writer,paperDraft.getAbstractContent(),paperDraft.getIntroduction(),paperDraft.getContent(),paperDraft.getConclusion(),paperDraft.getTitle(),paperDraft.getKeywords(),paperDraft.getAcknowledgement());
         JSONObject object = JSONObject.fromObject(paperBlock);
-        String paper_string=object.toString();
-        Block b=BlockUtil.sendDataToChainStore(paper_string);
-        return b;
+        String paperString=object.toString();
+        return BlockUtil.sendDataToChainStore(paperString);
     }
 
     @Override

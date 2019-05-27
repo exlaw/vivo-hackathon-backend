@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserBlServiceImpl {
 
-    private final static long EXPIRATION = 604800;
+    private static final long EXPIRATION = 604800;
     @Value("${email.sender}")
     private String senderEmail;
     @Value("${email.subject}")
@@ -31,14 +31,12 @@ public class UserBlServiceImpl {
     private final JwtUserDetailsService jwtUserDetailsService;
     private final JwtService jwtService;
     private final UserDao userDao;
-    private final JavaMailSender mailSender;
 
     @Autowired
     public UserBlServiceImpl(JwtUserDetailsService jwtUserDetailsService, JwtService jwtService, UserDao userDao, JavaMailSender mailSender) {
         this.jwtUserDetailsService = jwtUserDetailsService;
         this.jwtService = jwtService;
         this.userDao = userDao;
-        this.mailSender = mailSender;
     }
 
 
@@ -73,12 +71,11 @@ public class UserBlServiceImpl {
         if (userDao.findUserByUsername(params.getUsername()) != null) {
             throw new UserAlreadyExistsException();
         } else {
-            User new_user  = new User(String.format("http://identicon.relucks.org/%s?size=96", RandomUtil.generateCode(6)), params.getUsername(), params.getPassword(), params.getRole(), RandomUtil.generateUUID());
-            userDao.save(new_user);
-            System.out.println(params.getUsername());
+            User newUser  = new User(String.format("http://identicon.relucks.org/%s?size=96", RandomUtil.generateCode(6)), params.getUsername(), params.getPassword(), params.getRole(), RandomUtil.generateUUID());
+            userDao.save(newUser);
             JwtUser jwtUser = (JwtUser) jwtUserDetailsService.loadUserByUsername(params.getUsername());
             String token = jwtService.generateToken(jwtUser, EXPIRATION);
-            return new RegisterResponse(token, new_user.getUsername());
+            return new RegisterResponse(token, newUser.getUsername());
         }
     }
 

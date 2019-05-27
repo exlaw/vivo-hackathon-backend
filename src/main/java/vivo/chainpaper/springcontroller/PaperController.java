@@ -1,17 +1,14 @@
 package vivo.chainpaper.springcontroller;
 
 
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import vivo.chainpaper.blservice.paper.PaperBlService;
 import vivo.chainpaper.dao.CommentDao;
 import vivo.chainpaper.dao.PaperDao;
 import vivo.chainpaper.dao.StarDao;
-import vivo.chainpaper.dto.Block;
 import vivo.chainpaper.dto.CommentDto;
 import vivo.chainpaper.dto.PaperInfo;
 import vivo.chainpaper.entity.Comment;
@@ -26,6 +23,7 @@ import vivo.chainpaper.util.TimeUtil;
 import vivo.chainpaper.util.UserInfoUtil;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/papers")
@@ -51,7 +49,6 @@ public class PaperController {
     public @ResponseBody PaperUploadResponse
     uploadPaper(@RequestBody PaperUploadParams params){
         PaperDraft pd=params.getPaperDraft();
-        System.out.println(new Gson().toJson(pd));
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
 //        Block block=paperService.addPaperToChainStore(pd,UserInfoUtil.getUsername());//上链
 //        paper.setIndexs(block.getBlockIndex());
@@ -95,20 +92,22 @@ public class PaperController {
         return new ResponseEntity<>(new PaperRefResponse(paperRef), HttpStatus.OK);
     }
 
+    private String published = "published";
     public List<PaperRef> getRefsByID(String paperId){
+
         List<PaperRef> refs = new ArrayList<>();
         Paper paper = this.paperDao.getOne(paperId);
         for(int i = 0; i < paper.getRefs().size() ;  i++){
-            String Id = paper.getRefs().get(i).split("###")[0];
+            String pID = paper.getRefs().get(i).split("###")[0];
             PaperRef paperRef = new PaperRef(paper.getReference_type().get(i));
-            if(paper.getReference_type().get(i).equals("published")){
-                paperRef.setDoi(Id);
+            if(paper.getReference_type().get(i).equals(this.published)){
+                paperRef.setDoi(pID);
                 paperRef.setRefs(new ArrayList<>());
             }else{
-                paperRef.setPaperId(Id);
-                Paper paper1 = this.paperDao.getOne(Id);
+                paperRef.setPaperId(pID);
+                Paper paper1 = this.paperDao.getOne(pID);
                 paperRef.setTitle(paper1.getTitle());
-                paperRef.setRefs(this.getRefsByID(Id));
+                paperRef.setRefs(this.getRefsByID(pID));
             }
             refs.add(paperRef);
         }
@@ -125,7 +124,6 @@ public class PaperController {
             consumes = {"application/json", "application/xml"},
             produces = {"application/json", "application/xml"})
     public @ResponseBody PaperUploadResponse updateDemo(@PathVariable("paperId") String paperId, @RequestBody PaperUploadParams params){
-//        System.out.println(new Gson());
         Paper origin = this.paperDao.getOne(paperId);
         PaperDraft pd=params.getPaperDraft();
         Paper paper=new Paper(pd.getAbstractContent(),pd.getIntroduction(),pd.getContent(),pd.getConclusion(),pd.getReference(), UserInfoUtil.getUsername(),pd.getTitle(),pd.getKeywords(),pd.getAcknowledgement(), TimeUtil.getTimeStamp());
@@ -135,9 +133,9 @@ public class PaperController {
 //        paper.setIndexs(block.getBlockIndex());
 //        paper.setOffsets(block.getBlockOffset());
         paper.setId(paperId);
-        paper = setRefs(paper, pd);
-        paper.setCooperator(origin.getCooperator());
-        paperDao.save(paper);
+        Paper paper1 = setRefs(paper, pd);
+        paper1.setCooperator(origin.getCooperator());
+        paperDao.save(paper1);
         return new PaperUploadResponse(paperId);
     }
 
@@ -278,18 +276,15 @@ public class PaperController {
     public @ResponseBody
     ResponseEntity<Response> getPaperRecommend(){
         ArrayList<Paper> papers=(ArrayList<Paper>)paperDao.findAll();
-
-        if(papers.size()==0){
+        if(papers.isEmpty()){
             return new ResponseEntity<>(new SinglePaperGetResponse(null), HttpStatus.OK);
         }else {
-            int index=(int)(Math.random()*papers.size());
+            int index= new Random().nextInt(papers.size());
             PaperInfo paperInfo=getPaperInfoFromId(papers.get(index).getId());
             return new ResponseEntity<>(new SinglePaperGetResponse(paperInfo), HttpStatus.OK);
         }
 
     }
-
-
 
 
     private PaperInfo getPaperInfoFromId(String paperId){
@@ -319,8 +314,8 @@ public class PaperController {
             }else if(infos.length==1){
                 info1=infos[0];
             }
-            if(paper.getReference_type().get(i).equals("published")) {
-                ref = new Reference("published",info1,null,info2);
+            if(paper.getReference_type().get(i).equals(this.published)) {
+                ref = new Reference(this.published ,info1,null,info2);
             }else{
                  ref = new Reference("chainpaper",null,info1,info2);
             }
@@ -366,18 +361,18 @@ public class PaperController {
     }
 
     private Paper setRefs(Paper paper,PaperDraft pd){
-        ArrayList<String> ref_strs=new ArrayList<>();
+        ArrayList<String> refStrs=new ArrayList<>();
         ArrayList<String> type=new ArrayList<>();
         for(Reference ref:pd.getReference()){
-            String ref_type=ref.getType();
-            if(ref_type.equals("published")){
-                ref_strs.add(ref.getDoi()+"###"+ref.getContext());
+            String refType = ref.getType();
+            if(refType.equals("published")){
+                refStrs.add(ref.getDoi()+"###"+ref.getContext());
             }else{
-                ref_strs.add(ref.getPaperId()+"###"+ref.getContext());
+                refStrs.add(ref.getPaperId()+"###"+ref.getContext());
             }
-            type.add(ref_type);
+            type.add(refType);
         }
-        paper.setRefs(ref_strs);
+        paper.setRefs(refStrs);
         paper.setReference_type(type);
         return paper;
     }
