@@ -2,6 +2,10 @@ package vivo.chainpaper.util;
 
 
 import net.sf.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
 import vivo.chainpaper.dto.Block;
 import vivo.chainpaper.exception.SystemException;
 
@@ -9,32 +13,20 @@ public class BlockUtil {
     private static final String masterIp="http://localhost:8002";
     public static Block sendDataToChainStore(String data){
         String data_json="{ \"info\" : \""+data+"\" }"; // change data to json
-        try {
-            String response=HttpUtil.postData(masterIp+"/saveInfo", data_json, "application/json");
-            JSONObject jsonObject= JSONObject.fromObject(response);
-            long blockIndex=jsonObject.getLong("blockIndex");
-            long offset=jsonObject.getLong("offset");
-            Block block=new Block(blockIndex,offset);
-            return block;
-//            { "info" : "{"abstractContent":"1","conclusion":"1","content":"1","introduction":"1","uid":"law121212"}" }
-        }catch (SystemException e0){
-            System.out.println("connection timeout!");
-        }catch (Exception e){
-            //e.printStackTrace();
-            System.out.println("Can not find master!");
-        }
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+
+        MediaType type = MediaType.parseMediaType("application/json; charset=UTF-8");
+        headers.setContentType(type);
+        headers.add("Accept", MediaType.APPLICATION_JSON.toString());
+
+        HttpEntity<String> formEntity = new HttpEntity<String>(data_json, headers);
+
+        String result = restTemplate.postForObject(masterIp+"/saveInfo", formEntity, String.class);
+        JSONObject jsonObject= JSONObject.fromObject(result);
+        long blockIndex=jsonObject.getLong("blockIndex");
+        long offset=jsonObject.getLong("blockOffset");
+        Block block=new Block(blockIndex,offset);
+        return block;
     }
-//    public static String getInfoFromChainStore(Block block){
-//        String url=masterIp+"/findBlockInfo?blockIndex="+block.getBlockIndex()+"&&blockOffset="+block.getBlockOffset();
-//        String response=HttpUtil.getData(url);
-//        JSONObject jsonObject= JSONObject.fromObject(response);
-//        if(jsonObject==null){
-//            System.out.println("Can not find master!");
-//            return null;
-//        }
-//        String data=jsonObject.getString("data");
-//
-//        return data;
-//    }
 }
