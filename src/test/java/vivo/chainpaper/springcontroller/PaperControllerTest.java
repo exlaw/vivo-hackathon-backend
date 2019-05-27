@@ -38,9 +38,7 @@ public class PaperControllerTest {
 
     @Test
     public void paperTest(){
-        Reference[] refs=new Reference[2];
-        refs[0]=new Reference("published","","","");
-        refs[1]=new Reference("chainpaper","","","");
+        Reference[] refs=new Reference[0];
         PaperDraft paperDraft=new PaperDraft(refs,"a","a","a","a","a","a","a");
         PaperUploadParams paperUploadParams=new PaperUploadParams(paperDraft);
 
@@ -55,5 +53,16 @@ public class PaperControllerTest {
         paperController.getPaperInfo(paperUploadResponse.getPaperId());
         paperController.getPapersInfo();
         paperController.getPaperRecommend();
+
+         refs=new Reference[2];
+        refs[0]=new Reference("published","2",paperUploadResponse.getPaperId(),"4");
+        refs[1]=new Reference("chainpaper","3",paperUploadResponse.getPaperId(),"3");
+         paperDraft=new PaperDraft(refs,"a","a","a","a","a","a","a");
+       paperUploadParams=new PaperUploadParams(paperDraft);
+         paperUploadResponse=paperController.uploadPaper(paperUploadParams);
+        paperController.getRefs(paperUploadResponse.getPaperId());
+        paperController.getPaperInfo(paperUploadResponse.getPaperId());
+        paperController.getPapersInfo();
+
     }
 }
