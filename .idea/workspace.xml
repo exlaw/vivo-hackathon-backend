@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb0c708-6661-4f53-bfde-8e18b26857a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/CollabrateControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="88" />
+    <option name="myElementSize" value="83" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -129,42 +130,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/DemoTest.java">
+        <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/collabration">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="139">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2786#2787#0" expanded="true" />
-                <element signature="e#2832#2833#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/util/MockNameutilTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/paper">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/util/RoleUtilTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="273">
+              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/util/UserInfoUtilTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -172,17 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/PaperControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-563">
-              <caret line="102" column="8" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
+            <state relative-caret-position="313">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -191,28 +196,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/RandomUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/util/UserInfoUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="225">
+              <caret line="101" column="46" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/CollabrateControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="500">
+              <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,8 +222,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+            <state relative-caret-position="475">
+              <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoPersonResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -232,6 +243,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -256,7 +268,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/security/jwt/JwtUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/parameters/NormalParams.java" />
@@ -282,7 +293,6 @@
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/StarDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/CommentDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/ScoreResponse.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Comment.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Star.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/CommentItem.java" />
@@ -298,7 +308,6 @@
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoPersonResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/dao/CollabrationDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/bl/account/UserBlServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/blservice/account/UserBlService.java" />
         <option value="$PROJECT_DIR$/src/test/java/DemoTest.java" />
@@ -307,6 +316,9 @@
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/CORSConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/filter/JwtAuthenticationTokenFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/CollabrateControllerTest.java" />
       </list>
     </option>
   </component>
@@ -387,6 +399,15 @@
               <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="jsonAdapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
@@ -485,6 +506,36 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="shell" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vivo.Backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vivo-hackathon-backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chainpaper" type="462c0819:PsiDirectoryNode" />
+              <item name="springcontroller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -502,6 +553,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -509,6 +562,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="vivo.chainpaper.springcontroller" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -522,7 +583,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Vivo.Backend.test">
+  <component name="RunManager" selected="Application.MainApplication">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vivo.chainpaper.MainApplication" />
       <module name="Vivo.Backend.main" />
@@ -609,7 +670,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558845037501</updated>
-      <workItem from="1558845044311" duration="38913000" />
+      <workItem from="1558845044311" duration="40515000" />
     </task>
     <servers />
   </component>
@@ -646,7 +707,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43432000" />
+    <option name="totallyTimeSpent" value="45034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -666,21 +727,21 @@
       <window_info anchor="bottom" id="SonarLint" order="2" weight="0.32944345" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32944345" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.3491921" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.39497307" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.3994614" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32883817" />
       <window_info anchor="bottom" id="Spring" order="11" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.33662477" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.33662477" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" weight="0.32944345" />
       <window_info anchor="bottom" id="Database Changes" order="16" weight="0.32944345" />
       <window_info anchor="bottom" id="Version Control" order="17" weight="0.32987553" />
       <window_info anchor="bottom" id="Messages" order="18" weight="0.32944345" />
-      <window_info anchor="right" id="Coverage" sideWeight="0.5020298" side_tool="true" visible="true" weight="0.17305644" />
+      <window_info anchor="right" id="Coverage" sideWeight="0.50206894" side_tool="true" weight="0.17305644" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.24481075" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -689,7 +750,7 @@
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Gradle" order="7" sideWeight="0.49859944" weight="0.18210863" />
-      <window_info anchor="right" id="Database" order="8" sideWeight="0.49797022" visible="true" weight="0.17305644" />
+      <window_info anchor="right" id="Database" order="8" sideWeight="0.49793103" visible="true" weight="0.17305644" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
@@ -701,45 +762,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Vivo_Backend$DemoTest.ic" NAME="DemoTest Coverage Results" MODIFIED="1558897658394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Vivo_Backend$DemoTest_test.ic" NAME="DemoTest.test Coverage Results" MODIFIED="1558893739945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Vivo_Backend$All_in_Vivo_Backend_test.ic" NAME="All in Vivo.Backend.test Coverage Results" MODIFIED="1558913238285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Vivo_Backend$All_in_Vivo_Backend_test.ic" NAME="All in Vivo.Backend.test Coverage Results" MODIFIED="1558915941900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Paper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1576">
-          <caret line="158" column="36" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/cooperator">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/user/RegisterResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -837,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoPersonResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1364">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoRequestResponce.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -855,15 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="90" column="57" lean-forward="true" selection-start-line="90" selection-start-column="57" selection-end-line="90" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/paper">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -883,15 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="70" lean-forward="true" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/collabration">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -975,16 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/config/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
@@ -1065,18 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DemoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2786#2787#0" expanded="true" />
-            <element signature="e#2832#2833#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/util/MockNameutilTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1098,34 +1076,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/PaperControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/UtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-563">
-          <caret line="102" column="8" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+        <state relative-caret-position="84">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/PaperController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DemoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2786#2787#0" expanded="true" />
+            <element signature="e#2832#2833#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/collabration">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/paper">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/account/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/response/InfoPersonResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/entity/account/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b70b6e33-5e8c-4236-94fd-f9fc9b3d4c85/schema/chainpaper/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="4fdfe8d7-eccd-445e-ae27-f07571c44e62">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vivo/chainpaper/springcontroller/CollabrateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="101" column="46" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/PaperControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/vivo/chainpaper/springcontroller/CollabrateControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
